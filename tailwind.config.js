@@ -25,6 +25,8 @@ export default {
         border: 'var(--border)',
         input: 'var(--input)',
         ring: 'var(--ring)',
+        'gym-primary': 'rgb(218, 255, 255)',
+        'gym-secondary': 'rgb(255, 255, 255)',
       },
       borderRadius: {
         lg: 'var(--radius)',
