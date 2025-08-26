@@ -2,7 +2,6 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { 
-  Dumbbell, 
   Heart, 
   Trophy, 
   Users, 
@@ -12,30 +11,43 @@ import {
   CheckCircle,
   Phone,
   Mail,
-  MapPin
+  MapPin,
+  Menu,
+  MessageCircle
 } from 'lucide-react'
 
 export default function GymLandingPage() {
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "56959889632" // Chilean WhatsApp number without + and spaces
+    const message = "Hola, me interesa saber más sobre los planes de GymTyme"
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
+  }
+
+  const handleMenuClick = () => {
+    // TODO: Implement menu functionality later
+    console.log('Menu clicked')
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
-      {/* Header/Navigation */}
-      <header className="bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Dumbbell className="h-8 w-8 text-gym-primary" />
-            <span className="text-2xl font-bold text-gray-800">GymTyme</span>
-          </div>
-          <nav className="hidden md:flex items-center gap-6">
-            <a href="#bienvenida" className="text-gray-600 hover:text-gym-primary transition-colors">Inicio</a>
-            <a href="#motivacion" className="text-gray-600 hover:text-gym-primary transition-colors">Motivación</a>
-            <a href="#planes" className="text-gray-600 hover:text-gym-primary transition-colors">Planes</a>
-            <a href="#contacto" className="text-gray-600 hover:text-gym-primary transition-colors">Contacto</a>
-          </nav>
-          <Button className="bg-gym-primary text-black hover:bg-gym-primary/90 shadow-md">
-            Únete Ahora
-          </Button>
-        </div>
-      </header>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 relative">
+      {/* Floating Menu Button - Top Right */}
+      <Button
+        onClick={handleMenuClick}
+        className="fixed top-6 right-6 z-50 bg-white/90 backdrop-blur-sm border border-gray-200 hover:bg-white hover:border-gym-primary shadow-lg"
+        size="icon"
+      >
+        <Menu className="h-5 w-5 text-gray-700" />
+      </Button>
+
+      {/* Floating WhatsApp Button - Bottom Right */}
+      <Button
+        onClick={handleWhatsAppClick}
+        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 shadow-lg"
+        size="icon"
+      >
+        <MessageCircle className="h-5 w-5 text-white" />
+      </Button>
 
       {/* Welcome Section */}
       <section id="bienvenida" className="min-h-[100dvh] flex items-center justify-center relative">
@@ -276,19 +288,6 @@ export default function GymLandingPage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 py-8">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Dumbbell className="h-6 w-6 text-gym-primary" />
-            <span className="text-xl font-bold text-gray-800">GymTyme</span>
-          </div>
-          <p className="text-gray-500">
-            © 2025 GymTyme. Todos los derechos reservados. Transforma tu vida, un entrenamiento a la vez.
-          </p>
-        </div>
-      </footer>
     </div>
   )
 }
