@@ -16,6 +16,8 @@ import {
   MessageCircle
 } from 'lucide-react'
 import TymeLogo from '@/assets/landing/tyme_logo.png'
+import PlanEsencialBg from '@/assets/landing/plan_esencial.webp'
+import PlanPersonalizadoBg from '@/assets/landing/plan_personalizado.webp'
 
 export default function GymLandingPage() {
   const handleWhatsAppClick = () => {
@@ -157,70 +159,90 @@ export default function GymLandingPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Basic Plan */}
-            <Card className="bg-white border-gray-200 hover:border-gym-primary/40 transition-all duration-300 relative shadow-lg">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl text-gray-800 mb-2">Plan Básico</CardTitle>
-                <div className="text-4xl font-bold text-gym-primary mb-4">
-                  $29.990<span className="text-lg text-gray-500">/mes</span>
-                </div>
-                <CardDescription className="text-gray-600">
-                  Perfecto para comenzar tu viaje de fitness
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {[
-                  "Acceso a equipos del gimnasio",
-                  "Planes de entrenamiento básicos",
-                  "Acceso a vestuarios",
-                  "Aplicación fitness online",
-                  "Apoyo de la comunidad"
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-gym-primary" />
-                    <span className="text-gray-700">{feature}</span>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Plan Esencial */}
+            <Card
+              className="relative overflow-hidden border-2 border-transparent hover:border-gym-primary transition-all duration-300 group shadow-xl"
+              style={{
+                backgroundImage: `url(${PlanEsencialBg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition-all duration-300"></div>
+              <div className="relative h-full flex flex-col p-8 text-white">
+                <CardHeader className="text-center">
+                  <CardTitle className="text-3xl font-bold mb-2">Plan Esencial</CardTitle>
+                  <div className="text-5xl font-extrabold text-gym-primary mb-4">
+                    $29.990<span className="text-xl font-medium text-gray-300">/mes</span>
                   </div>
-                ))}
-                <Button className="w-full mt-6 bg-gym-primary text-black hover:bg-gym-primary/90 shadow-md">
-                  Elegir Básico
+                  <CardDescription className="text-gray-300">
+                    Perfecto para comenzar tu viaje de fitness con todo lo necesario.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow space-y-4">
+                  {[
+                    "Acceso a todas las áreas del gimnasio",
+                    "Acceso a clases grupales",
+                    "Plan de entrenamiento inicial",
+                    "Seguimiento básico por app",
+                    "Acceso a camarines y duchas"
+                  ].map((feature, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-gym-primary" />
+                      <span className="text-gray-200">{feature}</span>
+                    </div>
+                  ))}
+                </CardContent>
+                <Button className="w-full mt-6 bg-gym-primary text-black font-bold text-lg py-6 hover:bg-gym-primary/90 shadow-lg transform hover:scale-105 transition-transform">
+                  Elegir Esencial
                 </Button>
-              </CardContent>
+              </div>
             </Card>
 
-            {/* Premium Plan */}
-            <Card className="bg-white border-gray-200 hover:border-gym-primary/40 transition-all duration-300 relative shadow-lg">
-              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gym-primary text-black">
-                Más Popular
+            {/* Plan Personalizado */}
+            <Card
+              className="relative overflow-hidden border-2 border-gym-primary transition-all duration-300 group shadow-2xl"
+              style={{
+                backgroundImage: `url(${PlanPersonalizadoBg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <Badge className="absolute top-4 right-4 bg-gym-primary text-black font-bold">
+                Recomendado
               </Badge>
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl text-gray-800 mb-2">Plan Premium</CardTitle>
-                <div className="text-4xl font-bold text-gym-primary mb-4">
-                  $59.990<span className="text-lg text-gray-500">/mes</span>
-                </div>
-                <CardDescription className="text-gray-600">
-                  Experiencia completa de fitness con orientación personal
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {[
-                  "Todo lo del plan Básico",
-                  "Sesiones con entrenador personal",
-                  "Consulta nutricional",
-                  "Clases premium",
-                  "Acceso 24/7 al gimnasio",
-                  "Pases para invitados",
-                  "Soporte prioritario"
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-gym-primary" />
-                    <span className="text-gray-700">{feature}</span>
+              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition-all duration-300"></div>
+              <div className="relative h-full flex flex-col p-8 text-white">
+                <CardHeader className="text-center">
+                  <CardTitle className="text-3xl font-bold mb-2">Plan Personalizado</CardTitle>
+                  <div className="text-5xl font-extrabold text-gym-primary mb-4">
+                    $59.990<span className="text-xl font-medium text-gray-300">/mes</span>
                   </div>
-                ))}
-                <Button className="w-full mt-6 bg-gym-primary text-black hover:bg-gym-primary/90 shadow-md">
-                  Elegir Premium
+                  <CardDescription className="text-gray-300">
+                    Maximiza tus resultados con un plan hecho a tu medida.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow space-y-4">
+                  {[
+                    "Todo lo del Plan Esencial",
+                    "Entrenador personal asignado",
+                    "Plan de entrenamiento 100% personalizado",
+                    "Evaluaciones físicas periódicas",
+                    "Asesoría nutricional completa",
+                    "Acceso ilimitado a todas las clases",
+                    "Acceso 24/7"
+                  ].map((feature, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-gym-primary" />
+                      <span className="text-gray-200">{feature}</span>
+                    </div>
+                  ))}
+                </CardContent>
+                <Button className="w-full mt-6 bg-gym-primary text-black font-bold text-lg py-6 hover:bg-gym-primary/90 shadow-lg transform hover:scale-105 transition-transform">
+                  Elegir Personalizado
                 </Button>
-              </CardContent>
+              </div>
             </Card>
           </div>
         </div>
