@@ -27,6 +27,14 @@ export default function GymLandingPage() {
     window.open(whatsappUrl, '_blank')
   }
 
+  const handleInstagramClick = () => {
+    window.open('https://instagram.com/somostyme', '_blank')
+  }
+
+  const handleMapClick = () => {
+    window.open('https://maps.app.goo.gl/g1hTsWJiinpBtdYn8', '_blank')
+  }
+
   const handleMenuClick = () => {
     // TODO: Implement menu functionality later
     console.log('Menu clicked')
@@ -98,26 +106,10 @@ export default function GymLandingPage() {
         </div>
       </section>
 
-      {/* Section Divider - Animated Wave */}
-      <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-gym-primary/20 via-gym-primary/10 to-gym-primary/20"></div>
-        <svg 
-          className="relative w-full h-12 text-white" 
-          viewBox="0 0 1440 120" 
-          preserveAspectRatio="none"
-        >
-          <path 
-            d="M0,0 C240,60 480,60 720,30 C960,0 1200,60 1440,30 L1440,120 L0,120 Z" 
-            fill="currentColor"
-            className="drop-shadow-sm"
-          />
-        </svg>
-      </div>
-
       {/* Motivation Section */}
       <section 
         id="motivacion" 
-        className="min-h-[100dvh] py-20 relative"
+        className="min-h-[100dvh] py-32 relative border-t border-gray-200/50"
         style={{
           background: `
             radial-gradient(circle at 70% 10%, rgba(139, 69, 19, 0.08) 0%, transparent 60%),
@@ -186,33 +178,10 @@ export default function GymLandingPage() {
         </div>
       </section>
 
-      {/* Section Divider - Geometric Transition */}
-      <div className="relative h-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gym-primary/5 to-transparent"></div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex space-x-2">
-            <div className="w-3 h-3 bg-gym-primary/30 rounded-full animate-pulse"></div>
-            <div className="w-3 h-3 bg-gym-primary/50 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-            <div className="w-3 h-3 bg-gym-primary/70 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
-          </div>
-        </div>
-        <svg 
-          className="absolute bottom-0 w-full h-12 text-white" 
-          viewBox="0 0 1440 120" 
-          preserveAspectRatio="none"
-        >
-          <polygon 
-            points="0,120 720,0 1440,120" 
-            fill="currentColor"
-            className="drop-shadow-sm"
-          />
-        </svg>
-      </div>
-
       {/* Plans Section */}
       <section 
         id="planes" 
-        className="min-h-[100dvh] py-20 relative"
+        className="min-h-[100dvh] py-32 relative"
         style={{
           background: `
             radial-gradient(ellipse at top left, rgba(34, 197, 94, 0.08) 0%, transparent 50%),
@@ -227,6 +196,8 @@ export default function GymLandingPage() {
           `
         }}
       >
+        {/* Subtle top separator */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-gym-primary/30 to-transparent"></div>
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-gym-primary/10 text-gym-primary border-gym-primary">
@@ -330,34 +301,10 @@ export default function GymLandingPage() {
         </div>
       </section>
 
-      {/* Section Divider - Modern Slope */}
-      <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100"></div>
-        <svg 
-          className="relative w-full h-16 text-gray-50" 
-          viewBox="0 0 1440 120" 
-          preserveAspectRatio="none"
-        >
-          <path 
-            d="M0,120 C360,40 720,80 1440,20 L1440,120 Z" 
-            fill="currentColor"
-            className="drop-shadow-lg"
-          />
-        </svg>
-        {/* Decorative elements */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="flex items-center space-x-4">
-            <div className="w-2 h-2 bg-gym-primary rounded-full opacity-60"></div>
-            <div className="w-8 h-px bg-gradient-to-r from-transparent via-gym-primary/40 to-transparent"></div>
-            <div className="w-2 h-2 bg-gym-primary rounded-full opacity-60"></div>
-          </div>
-        </div>
-      </div>
-
       {/* Contact & CTA Section */}
       <section 
         id="contacto" 
-        className="min-h-[100dvh] py-20 relative"
+        className="min-h-[100dvh] py-32 relative border-t border-gray-200/30"
         style={{
           background: `
             radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 60%),
@@ -372,6 +319,14 @@ export default function GymLandingPage() {
           `
         }}
       >
+        {/* Minimal top accent */}
+        <div className="absolute top-8 left-1/2 transform -translate-x-1/2">
+          <div className="flex items-center space-x-2">
+            <div className="w-1 h-1 bg-gym-primary/40 rounded-full"></div>
+            <div className="w-12 h-px bg-gradient-to-r from-transparent via-gym-primary/30 to-transparent"></div>
+            <div className="w-1 h-1 bg-gym-primary/40 rounded-full"></div>
+          </div>
+        </div>
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-gym-primary/10 text-gym-primary border-gym-primary">
@@ -389,49 +344,63 @@ export default function GymLandingPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
-            <Card className="bg-white/90 backdrop-blur-sm border-gray-200 text-center shadow-sm hover:shadow-md transition-all duration-300">
+            {/* WhatsApp Card */}
+            <Card 
+              className="bg-white/90 backdrop-blur-sm border-gray-200 text-center shadow-sm hover:shadow-lg hover:border-gym-primary/40 hover:bg-white transition-all duration-300 cursor-pointer transform hover:scale-105"
+              onClick={handleWhatsAppClick}
+            >
               <CardHeader>
                 <Phone className="h-8 w-8 text-gym-primary mx-auto mb-2" />
                 <CardTitle className="text-gray-800">Llámanos</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-700">+56 9 1234 5678</p>
-                <p className="text-gray-500 text-sm">Lun-Vie 6AM-10PM</p>
+                <p className="text-gray-700">+56 9 5988 9632</p>
+                <p className="text-gym-primary text-sm font-medium">¡Envíanos un mensaje!</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white/90 backdrop-blur-sm border-gray-200 text-center shadow-sm hover:shadow-md transition-all duration-300">
+            {/* Instagram Card */}
+            <Card 
+              className="bg-white/90 backdrop-blur-sm border-gray-200 text-center shadow-sm hover:shadow-lg hover:border-gym-primary/40 hover:bg-white transition-all duration-300 cursor-pointer transform hover:scale-105"
+              onClick={handleInstagramClick}
+            >
               <CardHeader>
                 <Instagram className="h-8 w-8 text-gym-primary mx-auto mb-2" />
                 <CardTitle className="text-gray-800">Síguenos</CardTitle>
               </CardHeader>
               <CardContent>
-                <a href="https://instagram.com/somostyme" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gym-primary">@somostyme</a>
-                <p className="text-gray-500 text-sm">Contenido e historias</p>
+                <p className="text-gray-700">@somostyme</p>
+                <p className="text-gym-primary text-sm font-medium">¡El mejor contenido para tu salud!</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white/90 backdrop-blur-sm border-gray-200 text-center shadow-sm hover:shadow-md transition-all duration-300">
-              <a href="https://maps.app.goo.gl/g1hTsWJiinpBtdYn8" target="_blank" rel="noopener noreferrer">
-                <CardHeader>
-                  <MapPin className="h-8 w-8 text-gym-primary mx-auto mb-2" />
-                  <CardTitle className="text-gray-800">Visítanos</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">Ossandón 19, Coquimbo</p>
-                  <p className="text-gray-500 text-sm">¡A solo pasos del centro!</p>
-                </CardContent>
-              </a>
+            {/* Map Card */}
+            <Card 
+              className="bg-white/90 backdrop-blur-sm border-gray-200 text-center shadow-sm hover:shadow-lg hover:border-gym-primary/40 hover:bg-white transition-all duration-300 cursor-pointer transform hover:scale-105"
+              onClick={handleMapClick}
+            >
+              <CardHeader>
+                <MapPin className="h-8 w-8 text-gym-primary mx-auto mb-2" />
+                <CardTitle className="text-gray-800">Visítanos</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700">Ossandón 19, Coquimbo</p>
+                <p className="text-gym-primary text-sm font-medium">¡A solo pasos del centro!</p>
+              </CardContent>
             </Card>
           </div>
 
-          {/* Placeholder for contact/location image */}
+          {/* Google Maps Embed */}
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg h-64 flex items-center justify-center shadow-inner">
-              <div className="text-center">
-                <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-2" />
-                <p className="text-gray-500">Imagen de Ubicación/Contacto</p>
-              </div>
+            <div className="relative rounded-xl overflow-hidden shadow-lg">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1728.3366543638322!2d-71.3440601!3d-29.9600742!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9691c8fb878c1a35%3A0x178cdb2945622f61!2sOssand%C3%B3n%2019%2C%201781295%20Coquimbo!5e0!3m2!1ses-419!2scl!4v1756492361103!5m2!1ses-419!2scl" 
+                className="w-full h-96 border-0"
+                allowFullScreen={true}
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ubicación GymTyme - Ossandón 19, Coquimbo"
+              />
             </div>
           </div>
         </div>
