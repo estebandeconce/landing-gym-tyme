@@ -53,7 +53,17 @@ export default function GymLandingPage() {
       </Button>
 
       {/* Welcome Section */}
-      <section id="bienvenida" className="min-h-[100dvh] flex items-center justify-center relative">
+      <section 
+        id="bienvenida"   
+        className="min-h-[100dvh] flex items-center justify-center relative"
+        style={{
+          background: `
+            radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+            linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%)
+          `
+        }}
+      >
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <img src={TymeLogo} alt="GymTyme Logo" className="mx-auto mb-8 h-24" />
@@ -88,8 +98,40 @@ export default function GymLandingPage() {
         </div>
       </section>
 
+      {/* Section Divider - Animated Wave */}
+      <div className="relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-gym-primary/20 via-gym-primary/10 to-gym-primary/20"></div>
+        <svg 
+          className="relative w-full h-12 text-white" 
+          viewBox="0 0 1440 120" 
+          preserveAspectRatio="none"
+        >
+          <path 
+            d="M0,0 C240,60 480,60 720,30 C960,0 1200,60 1440,30 L1440,120 L0,120 Z" 
+            fill="currentColor"
+            className="drop-shadow-sm"
+          />
+        </svg>
+      </div>
+
       {/* Motivation Section */}
-      <section id="motivacion" className="min-h-[100dvh] py-20 bg-gray-50/50">
+      <section 
+        id="motivacion" 
+        className="min-h-[100dvh] py-20 relative"
+        style={{
+          background: `
+            radial-gradient(circle at 70% 10%, rgba(139, 69, 19, 0.08) 0%, transparent 60%),
+            radial-gradient(circle at 30% 90%, rgba(255, 193, 7, 0.1) 0%, transparent 50%),
+            linear-gradient(45deg, #f9fafb 0%, #f3f4f6 25%, #e5e7eb 50%, #f9fafb 75%, #ffffff 100%),
+            repeating-linear-gradient(
+              90deg,
+              transparent,
+              transparent 98px,
+              rgba(0,0,0,0.02) 100px
+            )
+          `
+        }}
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-gym-primary/10 text-gym-primary border-gym-primary">
@@ -112,7 +154,7 @@ export default function GymLandingPage() {
               { icon: Star, title: "Entrenadores Expertos", description: "Aprende de entrenadores certificados con años de experiencia y resultados comprobados." },
               { icon: Heart, title: "Enfoque en Salud", description: "Prioriza tu bienestar con orientación integral de salud y nutrición." }
             ].map((item, index) => (
-              <Card key={index} className="bg-white border-gray-200 hover:border-gym-primary/40 transition-all duration-300 shadow-sm hover:shadow-md">
+              <Card key={index} className="bg-white/80 backdrop-blur-sm border-gray-200 hover:border-gym-primary/40 transition-all duration-300 shadow-sm hover:shadow-lg hover:bg-white/90">
                 <CardHeader className="text-center">
                   <item.icon className="h-12 w-12 text-gym-primary mx-auto mb-4" />
                   <CardTitle className="text-gray-800">{item.title}</CardTitle>
@@ -144,8 +186,47 @@ export default function GymLandingPage() {
         </div>
       </section>
 
+      {/* Section Divider - Geometric Transition */}
+      <div className="relative h-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gym-primary/5 to-transparent"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="flex space-x-2">
+            <div className="w-3 h-3 bg-gym-primary/30 rounded-full animate-pulse"></div>
+            <div className="w-3 h-3 bg-gym-primary/50 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+            <div className="w-3 h-3 bg-gym-primary/70 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+          </div>
+        </div>
+        <svg 
+          className="absolute bottom-0 w-full h-12 text-white" 
+          viewBox="0 0 1440 120" 
+          preserveAspectRatio="none"
+        >
+          <polygon 
+            points="0,120 720,0 1440,120" 
+            fill="currentColor"
+            className="drop-shadow-sm"
+          />
+        </svg>
+      </div>
+
       {/* Plans Section */}
-      <section id="planes" className="min-h-[100dvh] py-20 bg-white">
+      <section 
+        id="planes" 
+        className="min-h-[100dvh] py-20 relative"
+        style={{
+          background: `
+            radial-gradient(ellipse at top left, rgba(34, 197, 94, 0.08) 0%, transparent 50%),
+            radial-gradient(ellipse at bottom right, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+            linear-gradient(180deg, #ffffff 0%, #f8fafc 30%, #ffffff 70%, #f1f5f9 100%),
+            repeating-conic-gradient(
+              from 0deg at 50% 50%,
+              transparent 0deg,
+              rgba(0,0,0,0.01) 2deg,
+              transparent 4deg
+            )
+          `
+        }}
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-gym-primary/10 text-gym-primary border-gym-primary">
@@ -249,8 +330,48 @@ export default function GymLandingPage() {
         </div>
       </section>
 
+      {/* Section Divider - Modern Slope */}
+      <div className="relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100"></div>
+        <svg 
+          className="relative w-full h-16 text-gray-50" 
+          viewBox="0 0 1440 120" 
+          preserveAspectRatio="none"
+        >
+          <path 
+            d="M0,120 C360,40 720,80 1440,20 L1440,120 Z" 
+            fill="currentColor"
+            className="drop-shadow-lg"
+          />
+        </svg>
+        {/* Decorative elements */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="flex items-center space-x-4">
+            <div className="w-2 h-2 bg-gym-primary rounded-full opacity-60"></div>
+            <div className="w-8 h-px bg-gradient-to-r from-transparent via-gym-primary/40 to-transparent"></div>
+            <div className="w-2 h-2 bg-gym-primary rounded-full opacity-60"></div>
+          </div>
+        </div>
+      </div>
+
       {/* Contact & CTA Section */}
-      <section id="contacto" className="min-h-[100dvh] py-20 bg-gray-50/50">
+      <section 
+        id="contacto" 
+        className="min-h-[100dvh] py-20 relative"
+        style={{
+          background: `
+            radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 60%),
+            radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.1) 0%, transparent 60%),
+            linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 25%, #f8fafc 50%, #f0f9ff 75%, #f1f5f9 100%),
+            repeating-linear-gradient(
+              45deg,
+              transparent,
+              transparent 48px,
+              rgba(0,0,0,0.015) 50px
+            )
+          `
+        }}
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-gym-primary/10 text-gym-primary border-gym-primary">
@@ -268,7 +389,7 @@ export default function GymLandingPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
-            <Card className="bg-white border-gray-200 text-center shadow-sm">
+            <Card className="bg-white/90 backdrop-blur-sm border-gray-200 text-center shadow-sm hover:shadow-md transition-all duration-300">
               <CardHeader>
                 <Phone className="h-8 w-8 text-gym-primary mx-auto mb-2" />
                 <CardTitle className="text-gray-800">Llámanos</CardTitle>
@@ -279,7 +400,7 @@ export default function GymLandingPage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white border-gray-200 text-center shadow-sm">
+            <Card className="bg-white/90 backdrop-blur-sm border-gray-200 text-center shadow-sm hover:shadow-md transition-all duration-300">
               <CardHeader>
                 <Instagram className="h-8 w-8 text-gym-primary mx-auto mb-2" />
                 <CardTitle className="text-gray-800">Síguenos</CardTitle>
@@ -290,7 +411,7 @@ export default function GymLandingPage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white border-gray-200 text-center shadow-sm">
+            <Card className="bg-white/90 backdrop-blur-sm border-gray-200 text-center shadow-sm hover:shadow-md transition-all duration-300">
               <a href="https://maps.app.goo.gl/g1hTsWJiinpBtdYn8" target="_blank" rel="noopener noreferrer">
                 <CardHeader>
                   <MapPin className="h-8 w-8 text-gym-primary mx-auto mb-2" />
