@@ -1,20 +1,21 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { 
-  Heart, 
-  Trophy, 
-  Users, 
-  Clock, 
-  Target, 
-  Star, 
+import {
+  Heart,
+  Trophy,
+  Users,
+  Clock,
+  Target,
+  Star,
   CheckCircle,
   Phone,
-  Mail,
+  Instagram,
   MapPin,
   Menu,
   MessageCircle
 } from 'lucide-react'
+import TymeLogo from '@/assets/landing/tyme_logo.png'
 
 export default function GymLandingPage() {
   const handleWhatsAppClick = () => {
@@ -53,6 +54,7 @@ export default function GymLandingPage() {
       <section id="bienvenida" className="min-h-[100dvh] flex items-center justify-center relative">
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
+            <img src={TymeLogo} alt="GymTyme Logo" className="mx-auto mb-8 h-24" />
             <Badge className="mb-6 bg-gym-primary/10 text-gym-primary border-gym-primary">
               Transforma Tu Vida
             </Badge>
@@ -71,7 +73,7 @@ export default function GymLandingPage() {
               </Button>
             </div>
           </div>
-          
+
           {/* Placeholder for hero image */}
           <div className="mt-16 max-w-4xl mx-auto">
             <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg h-96 flex items-center justify-center shadow-inner">
@@ -256,24 +258,26 @@ export default function GymLandingPage() {
 
             <Card className="bg-white border-gray-200 text-center shadow-sm">
               <CardHeader>
-                <Mail className="h-8 w-8 text-gym-primary mx-auto mb-2" />
-                <CardTitle className="text-gray-800">Escríbenos</CardTitle>
+                <Instagram className="h-8 w-8 text-gym-primary mx-auto mb-2" />
+                <CardTitle className="text-gray-800">Síguenos</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-700">info@gymtyme.cl</p>
-                <p className="text-gray-500 text-sm">Soporte 24/7</p>
+                <a href="https://instagram.com/somostyme" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gym-primary">@somostyme</a>
+                <p className="text-gray-500 text-sm">Contenido e historias</p>
               </CardContent>
             </Card>
 
             <Card className="bg-white border-gray-200 text-center shadow-sm">
-              <CardHeader>
-                <MapPin className="h-8 w-8 text-gym-primary mx-auto mb-2" />
-                <CardTitle className="text-gray-800">Visítanos</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700">Av. Providencia 123</p>
-                <p className="text-gray-500 text-sm">Santiago, Chile</p>
-              </CardContent>
+              <a href="https://maps.app.goo.gl/g1hTsWJiinpBtdYn8" target="_blank" rel="noopener noreferrer">
+                <CardHeader>
+                  <MapPin className="h-8 w-8 text-gym-primary mx-auto mb-2" />
+                  <CardTitle className="text-gray-800">Visítanos</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700">Ossandón 19, Coquimbo</p>
+                  <p className="text-gray-500 text-sm">¡A solo pasos del centro!</p>
+                </CardContent>
+              </a>
             </Card>
           </div>
 
