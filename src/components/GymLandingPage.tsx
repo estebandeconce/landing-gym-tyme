@@ -15,7 +15,7 @@ import {
   Menu,
   MessageCircle
 } from 'lucide-react'
-import TymeLogo from '@/assets/landing/tyme_logo.png'
+import TymeLogo from '@/assets/landing/tyme_logo.webp'
 import PlanEsencialBg from '@/assets/landing/plan_esencial.webp'
 import PlanPersonalizadoBg from '@/assets/landing/plan_personalizado.webp'
 
@@ -75,9 +75,9 @@ export default function GymLandingPage() {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <img src={TymeLogo} alt="GymTyme Logo" className="mx-auto mb-8 h-24" />
-            <Badge className="mb-6 bg-gym-primary/10 text-gym-primary border-gym-primary">
+            {/* <Badge className="mb-6 bg-gym-primary/10 text-gym-primary border-gym-primary">
               Transforma Tu Vida
-            </Badge>
+            </Badge> */}
             <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6">
               Bienvenido a <span className="text-gym-primary">GymTyme</span>
             </h1>
@@ -85,10 +85,10 @@ export default function GymLandingPage() {
               Donde el fitness se encuentra con la excelencia. Transforma tu cuerpo, eleva tu mente y alcanza la grandeza.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gym-primary text-black hover:bg-gym-primary/90 shadow-lg">
+              <Button size="lg" className="bg-gym-primary text-white hover:bg-gym-primary/90 shadow-lg font-semibold">
                 Comienza Tu Viaje
               </Button>
-              <Button size="lg" variant="outline" className="border-gym-primary text-gym-primary hover:bg-gym-primary/10">
+              <Button size="lg" variant="outline" className="border-gym-primary text-gym-primary hover:bg-gym-primary hover:text-white transition-colors">
                 Conoce Más
               </Button>
             </div>
@@ -126,9 +126,9 @@ export default function GymLandingPage() {
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-6 bg-gym-primary/10 text-gym-primary border-gym-primary">
+            {/* <Badge className="mb-6 bg-gym-primary/10 text-gym-primary border-gym-primary">
               Tu Motivación Importa
-            </Badge>
+            </Badge> */}
             <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
               Encuentra Tu <span className="text-gym-primary">Motivación</span>
             </h2>
@@ -200,9 +200,9 @@ export default function GymLandingPage() {
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-gym-primary/30 to-transparent"></div>
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-6 bg-gym-primary/10 text-gym-primary border-gym-primary">
+            {/* <Badge className="mb-6 bg-gym-primary/10 text-gym-primary border-gym-primary">
               Elige Tu Camino
-            </Badge>
+            </Badge> */}
             <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
               Planes de <span className="text-gym-primary">Membresía</span>
             </h2>
@@ -246,7 +246,7 @@ export default function GymLandingPage() {
                     <p className="text-4xl font-bold">Valor: $55.000</p>
                     <p className="text-gym-primary font-semibold text-xl">Valor estudiante: $40.000</p>
                   </div>
-                  <Button className="w-full bg-gym-primary text-black font-bold text-lg py-6 hover:bg-gym-primary/90 shadow-lg transform hover:scale-105 transition-transform">
+                  <Button className="w-full bg-gym-primary text-white font-bold text-lg py-6 hover:bg-gym-primary/90 shadow-lg transform hover:scale-105 transition-transform">
                     Comienza Ahora
                   </Button>
                 </div>
@@ -262,7 +262,7 @@ export default function GymLandingPage() {
                 backgroundPosition: 'center',
               }}
             >
-              <Badge className="absolute top-4 right-4 bg-gym-primary text-black font-bold">
+              <Badge className="absolute top-4 right-4 bg-gym-primary text-white font-bold">
                 Recomendado
               </Badge>
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40 group-hover:from-black/95 transition-all duration-300"></div>
@@ -291,7 +291,7 @@ export default function GymLandingPage() {
                   <div className="text-right mb-4">
                     <p className="text-4xl font-bold">Valor: $59.990</p>
                   </div>
-                  <Button className="w-full bg-gym-primary text-black font-bold text-lg py-6 hover:bg-gym-primary/90 shadow-lg transform hover:scale-105 transition-transform">
+                  <Button className="w-full bg-gym-primary text-white font-bold text-lg py-6 hover:bg-gym-primary/90 shadow-lg transform hover:scale-105 transition-transform">
                     Elige Personalizado
                   </Button>
                 </div>
@@ -329,16 +329,16 @@ export default function GymLandingPage() {
         </div>
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-6 bg-gym-primary/10 text-gym-primary border-gym-primary">
+            {/* <Badge className="mb-6 bg-gym-primary/10 text-gym-primary border-gym-primary">
               Comienza Hoy
-            </Badge>
+            </Badge> */}
             <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
               ¿Listo para <span className="text-gym-primary">Transformarte</span>?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Tu viaje de fitness comienza con un solo paso. Da ese paso hoy y únete a miles que ya han transformado sus vidas.
             </p>
-            <Button size="lg" className="bg-gym-primary text-black hover:bg-gym-primary/90 text-lg px-8 py-6 shadow-lg">
+            <Button size="lg" className="bg-gym-primary text-white hover:bg-gym-primary/90 text-lg px-8 py-6 shadow-lg font-semibold">
               Inicia Tu Prueba Gratuita
             </Button>
           </div>
