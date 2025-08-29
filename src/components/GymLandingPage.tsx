@@ -79,18 +79,18 @@ export default function GymLandingPage() {
               Transforma Tu Vida
             </Badge> */}
             <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6">
-              Bienvenido a <span className="text-gym-primary">GymTyme</span>
+              Bienvenido a <span className="text-gym-primary">TYME</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Donde el fitness se encuentra con la excelencia. Transforma tu cuerpo, eleva tu mente y alcanza la grandeza.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gym-primary text-white hover:bg-gym-primary/90 shadow-lg font-semibold">
+              {/* <Button size="lg" className="bg-gym-primary text-white hover:bg-gym-primary/90 shadow-lg font-semibold">
                 Comienza Tu Viaje
-              </Button>
-              <Button size="lg" variant="outline" className="border-gym-primary text-gym-primary hover:bg-gym-primary hover:text-white transition-colors">
+              </Button> */}
+              {/* <Button size="lg" variant="outline" className="border-gym-primary text-gym-primary hover:bg-gym-primary hover:text-white transition-colors">
                 Conoce Más
-              </Button>
+              </Button> */}
             </div>
           </div>
 
@@ -246,9 +246,9 @@ export default function GymLandingPage() {
                     <p className="text-4xl font-bold">Valor: $55.000</p>
                     <p className="text-gym-primary font-semibold text-xl">Valor estudiante: $40.000</p>
                   </div>
-                  <Button className="w-full bg-gym-primary text-white font-bold text-lg py-6 hover:bg-gym-primary/90 shadow-lg transform hover:scale-105 transition-transform">
+                  {/* <Button className="w-full bg-gym-primary text-white font-bold text-lg py-6 hover:bg-gym-primary/90 shadow-lg transform hover:scale-105 transition-transform">
                     Comienza Ahora
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             </Card>
@@ -291,9 +291,9 @@ export default function GymLandingPage() {
                   <div className="text-right mb-4">
                     <p className="text-4xl font-bold">Valor: $59.990</p>
                   </div>
-                  <Button className="w-full bg-gym-primary text-white font-bold text-lg py-6 hover:bg-gym-primary/90 shadow-lg transform hover:scale-105 transition-transform">
+                  {/* <Button className="w-full bg-gym-primary text-white font-bold text-lg py-6 hover:bg-gym-primary/90 shadow-lg transform hover:scale-105 transition-transform">
                     Elige Personalizado
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             </Card>
@@ -338,9 +338,9 @@ export default function GymLandingPage() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Tu viaje de fitness comienza con un solo paso. Da ese paso hoy y únete a miles que ya han transformado sus vidas.
             </p>
-            <Button size="lg" className="bg-gym-primary text-white hover:bg-gym-primary/90 text-lg px-8 py-6 shadow-lg font-semibold">
+            {/* <Button size="lg" className="bg-gym-primary text-white hover:bg-gym-primary/90 text-lg px-8 py-6 shadow-lg font-semibold">
               Inicia Tu Prueba Gratuita
-            </Button>
+            </Button> */}
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
