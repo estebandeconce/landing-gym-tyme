@@ -162,47 +162,48 @@ export default function GymLandingPage() {
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Plan Esencial */}
             <Card
-              className="relative overflow-hidden border-2 border-transparent hover:border-gym-primary transition-all duration-300 group shadow-xl"
+              className="relative overflow-hidden rounded-3xl border-2 border-transparent hover:border-gym-primary transition-all duration-300 group shadow-xl flex flex-col"
               style={{
                 backgroundImage: `url(${PlanEsencialBg})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
             >
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition-all duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40 group-hover:from-black/95 transition-all duration-300"></div>
               <div className="relative h-full flex flex-col p-8 text-white">
-                <CardHeader className="text-center">
-                  <CardTitle className="text-3xl font-bold mb-2">Plan Esencial</CardTitle>
-                  <div className="text-5xl font-extrabold text-gym-primary mb-4">
-                    $29.990<span className="text-xl font-medium text-gray-300">/mes</span>
-                  </div>
-                  <CardDescription className="text-gray-300">
-                    Perfecto para comenzar tu viaje de fitness con todo lo necesario.
-                  </CardDescription>
+                <CardHeader>
+                  <CardTitle className="text-4xl font-bold mb-1">Plan Esencial</CardTitle>
+                  <CardDescription className="text-gray-300 text-lg">Entrenamiento en sala</CardDescription>
                 </CardHeader>
-                <CardContent className="flex-grow space-y-4">
+                <CardContent className="flex-grow space-y-3 mt-4">
                   {[
-                    "Acceso a todas las áreas del gimnasio",
-                    "Acceso a clases grupales",
-                    "Plan de entrenamiento inicial",
-                    "Seguimiento básico por app",
-                    "Acceso a camarines y duchas"
+                    "Evaluación funcional",
+                    "Evaluación de fuerza y técnica",
+                    "Evaluación InBody",
+                    "Rutina y planificación",
+                    "Reserva de sala en aplicación box magic",
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-gym-primary" />
+                      <CheckCircle className="h-5 w-5 text-gym-primary flex-shrink-0" />
                       <span className="text-gray-200">{feature}</span>
                     </div>
                   ))}
                 </CardContent>
-                <Button className="w-full mt-6 bg-gym-primary text-black font-bold text-lg py-6 hover:bg-gym-primary/90 shadow-lg transform hover:scale-105 transition-transform">
-                  Elegir Esencial
-                </Button>
+                <div className="mt-auto pt-8">
+                  <div className="text-right mb-4">
+                    <p className="text-4xl font-bold">Valor: $55.000</p>
+                    <p className="text-gym-primary font-semibold text-xl">Valor estudiante: $40.000</p>
+                  </div>
+                  <Button className="w-full bg-gym-primary text-black font-bold text-lg py-6 hover:bg-gym-primary/90 shadow-lg transform hover:scale-105 transition-transform">
+                    Comienza Ahora
+                  </Button>
+                </div>
               </div>
             </Card>
 
             {/* Plan Personalizado */}
             <Card
-              className="relative overflow-hidden border-2 border-gym-primary transition-all duration-300 group shadow-2xl"
+              className="relative overflow-hidden rounded-3xl border-2 border-gym-primary transition-all duration-300 group shadow-2xl flex flex-col"
               style={{
                 backgroundImage: `url(${PlanPersonalizadoBg})`,
                 backgroundSize: 'cover',
@@ -212,18 +213,13 @@ export default function GymLandingPage() {
               <Badge className="absolute top-4 right-4 bg-gym-primary text-black font-bold">
                 Recomendado
               </Badge>
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition-all duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40 group-hover:from-black/95 transition-all duration-300"></div>
               <div className="relative h-full flex flex-col p-8 text-white">
-                <CardHeader className="text-center">
-                  <CardTitle className="text-3xl font-bold mb-2">Plan Personalizado</CardTitle>
-                  <div className="text-5xl font-extrabold text-gym-primary mb-4">
-                    $59.990<span className="text-xl font-medium text-gray-300">/mes</span>
-                  </div>
-                  <CardDescription className="text-gray-300">
-                    Maximiza tus resultados con un plan hecho a tu medida.
-                  </CardDescription>
+                <CardHeader>
+                  <CardTitle className="text-4xl font-bold mb-1">Plan Personalizado</CardTitle>
+                  <CardDescription className="text-gray-300 text-lg">Maximiza tus resultados</CardDescription>
                 </CardHeader>
-                <CardContent className="flex-grow space-y-4">
+                <CardContent className="flex-grow space-y-3 mt-4">
                   {[
                     "Todo lo del Plan Esencial",
                     "Entrenador personal asignado",
@@ -234,14 +230,19 @@ export default function GymLandingPage() {
                     "Acceso 24/7"
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-gym-primary" />
+                      <CheckCircle className="h-5 w-5 text-gym-primary flex-shrink-0" />
                       <span className="text-gray-200">{feature}</span>
                     </div>
                   ))}
                 </CardContent>
-                <Button className="w-full mt-6 bg-gym-primary text-black font-bold text-lg py-6 hover:bg-gym-primary/90 shadow-lg transform hover:scale-105 transition-transform">
-                  Elegir Personalizado
-                </Button>
+                <div className="mt-auto pt-8">
+                  <div className="text-right mb-4">
+                    <p className="text-4xl font-bold">Valor: $59.990</p>
+                  </div>
+                  <Button className="w-full bg-gym-primary text-black font-bold text-lg py-6 hover:bg-gym-primary/90 shadow-lg transform hover:scale-105 transition-transform">
+                    Elige Personalizado
+                  </Button>
+                </div>
               </div>
             </Card>
           </div>
