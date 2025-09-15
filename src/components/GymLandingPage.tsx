@@ -13,13 +13,44 @@ import {
   Instagram,
   MapPin,
   Menu,
-  MessageCircle
+  MessageCircle,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react'
+import { useState, useEffect } from 'react'
 import TymeLogo from '@/assets/landing/tyme_logo.webp'
 import PlanEsencialBg from '@/assets/landing/plan_esencial.webp'
 import PlanPersonalizadoBg from '@/assets/landing/plan_personalizado.webp'
+import Carrousel1 from '@/assets/landing/carrousel/Carrousel_1.jpg'
+import Carrousel2 from '@/assets/landing/carrousel/Carrousel_2.jpg'
+import Carrousel3 from '@/assets/landing/carrousel/Carrousel_3.jpg'
 
 export default function GymLandingPage() {
+  // Carousel state and functionality
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
+  const carouselImages = [Carrousel1, Carrousel2, Carrousel3]
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % carouselImages.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length)
+  }
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index)
+  }
+
+  // Auto-play carousel with pause on hover
+  useEffect(() => {
+    if (isHovered) return // Don't auto-advance if hovered
+
+    const interval = setInterval(nextSlide, 5000) // Change slide every 5 seconds
+    return () => clearInterval(interval)
+  }, [isHovered])
+
   const handleWhatsAppClick = () => {
     const phoneNumber = "56959889632" // Chilean WhatsApp number without + and spaces
     const message = "Hola, me interesa saber más sobre los planes de GymTyme"
@@ -60,9 +91,9 @@ export default function GymLandingPage() {
         <MessageCircle className="h-5 w-5 text-white" />
       </Button>
 
-      {/* Welcome Section */}
-      <section 
-        id="bienvenida"   
+      {/* Hero Section with Carousel */}
+      <section
+        id="bienvenida"
         className="min-h-[100dvh] flex items-center justify-center relative"
         style={{
           background: `
@@ -72,43 +103,149 @@ export default function GymLandingPage() {
           `
         }}
       >
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <img src={TymeLogo} alt="GymTyme Logo" className="mx-auto mb-8 h-24" />
-            {/* <Badge className="mb-6 bg-gym-primary/10 text-gym-primary border-gym-primary">
-              Transforma Tu Vida
-            </Badge> */}
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6">
-              Bienvenido a <span className="text-gym-primary">TYME</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Donde el fitness se encuentra con la excelencia. Transforma tu cuerpo, eleva tu mente y alcanza la grandeza.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {/* <Button size="lg" className="bg-gym-primary text-white hover:bg-gym-primary/90 shadow-lg font-semibold">
-                Comienza Tu Viaje
-              </Button> */}
-              {/* <Button size="lg" variant="outline" className="border-gym-primary text-gym-primary hover:bg-gym-primary hover:text-white transition-colors">
-                Conoce Más
-              </Button> */}
-            </div>
-          </div>
+        <div className="container mx-auto px-4 relative z-10 w-full max-w-7xl">
+          <div className="w-full">
+            {/* Desktop: 5/7 layout, Mobile: stacked */}
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[80vh] w-full">
 
-          {/* Placeholder for hero image */}
-          <div className="mt-16 max-w-4xl mx-auto">
-            <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg h-96 flex items-center justify-center shadow-inner">
-              <div className="text-center">
-                <Heart className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-500">Imagen Principal del Gimnasio</p>
+              {/* Text Column (5/12 on desktop) */}
+              <div className="lg:col-span-5 text-center lg:text-left order-1 lg:order-1">
+                <img
+                  src={TymeLogo}
+                  alt="GymTyme Logo"
+                  className="mx-auto lg:mx-0 mb-8 h-20 lg:h-24"
+                />
+
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight">
+                  <span className="block text-gym-primary mb-2">Tu espacio fitness,</span>
+                  <span className="block">tu momento</span>
+                </h1>
+
+                <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
+                  Donde el fitness se encuentra with la excelencia. Transforma tu cuerpo,
+                  eleva tu mente y alcanza la grandeza que siempre has buscado.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <Button
+                    size="lg"
+                    onClick={handleWhatsAppClick}
+                    className="bg-gym-primary text-white hover:bg-gym-primary/90 shadow-lg font-semibold px-8 py-3"
+                  >
+                    Comienza Tu Viaje
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-gym-primary text-gym-primary hover:bg-gym-primary hover:text-white transition-colors px-8 py-3"
+                    onClick={() => document.getElementById('planes')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    Ver Planes
+                  </Button>
+                </div>
               </div>
+
+              {/* Carousel Column (7/12 on desktop) */}
+              <div className="lg:col-span-7 order-2 lg:order-2 w-full">
+                <div
+                  className="relative rounded-2xl overflow-hidden shadow-2xl group w-full"
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+
+                  {/* Carousel Container */}
+                  <div
+                    className="relative w-full overflow-hidden
+                      aspect-[4/3] sm:aspect-[16/10] md:aspect-[16/9] lg:aspect-[16/9]"
+                  >
+                    {/* Images */}
+                    {carouselImages.map((image, index) => (
+                      <div
+                        key={index}
+                        className={`absolute inset-0 transition-transform duration-700 ease-in-out ${index === currentSlide ? 'translate-x-0' :
+                          index < currentSlide ? '-translate-x-full' : 'translate-x-full'
+                          }`}
+                      >
+                        <img
+                          src={image}
+                          alt={`TYME Gym Slide ${index + 1}`}
+                          className="w-full h-full object-cover object-center"
+                          loading={index === 0 ? 'eager' : 'lazy'}
+                        />
+                        {/* Subtle overlay for better contrast */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                      </div>
+                    ))}
+
+                    {/* Navigation Arrows */}
+                    <button
+                      onClick={prevSlide}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
+                      aria-label="Imagen anterior"
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+
+                    <button
+                      onClick={nextSlide}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
+                      aria-label="Siguiente imagen"
+                    >
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+
+                    {/* Dots Indicators */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                      {carouselImages.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => goToSlide(index)}
+                          className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
+                            ? 'bg-gym-primary shadow-lg scale-110'
+                            : 'bg-white/60 hover:bg-white/80'
+                            }`}
+                          aria-label={`Ir a imagen ${index + 1}`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Touch/Swipe Area for Mobile */}
+                  <div
+                    className="absolute inset-0 lg:hidden"
+                    onTouchStart={(e) => {
+                      const touch = e.touches[0]
+                      const startX = touch.clientX
+
+                      const handleTouchEnd = (endEvent: TouchEvent) => {
+                        const endX = endEvent.changedTouches[0].clientX
+                        const diff = startX - endX
+
+                        if (Math.abs(diff) > 50) { // Minimum swipe distance
+                          if (diff > 0) {
+                            nextSlide()
+                          } else {
+                            prevSlide()
+                          }
+                        }
+
+                        document.removeEventListener('touchend', handleTouchEnd)
+                      }
+
+                      document.addEventListener('touchend', handleTouchEnd)
+                    }}
+                  />
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
       </section>
 
       {/* Motivation Section */}
-      <section 
-        id="motivacion" 
+      <section
+        id="motivacion"
         className="min-h-[100dvh] py-32 relative border-t border-gray-200/50"
         style={{
           background: `
@@ -179,8 +316,8 @@ export default function GymLandingPage() {
       </section>
 
       {/* Plans Section */}
-      <section 
-        id="planes" 
+      <section
+        id="planes"
         className="min-h-[100dvh] py-32 relative"
         style={{
           background: `
@@ -302,8 +439,8 @@ export default function GymLandingPage() {
       </section>
 
       {/* Contact & CTA Section */}
-      <section 
-        id="contacto" 
+      <section
+        id="contacto"
         className="min-h-[100dvh] py-32 relative border-t border-gray-200/30"
         style={{
           background: `
@@ -345,7 +482,7 @@ export default function GymLandingPage() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
             {/* WhatsApp Card */}
-            <Card 
+            <Card
               className="bg-white/90 backdrop-blur-sm border-gray-200 text-center shadow-sm hover:shadow-lg hover:border-gym-primary/40 hover:bg-white transition-all duration-300 cursor-pointer transform hover:scale-105"
               onClick={handleWhatsAppClick}
             >
@@ -360,7 +497,7 @@ export default function GymLandingPage() {
             </Card>
 
             {/* Instagram Card */}
-            <Card 
+            <Card
               className="bg-white/90 backdrop-blur-sm border-gray-200 text-center shadow-sm hover:shadow-lg hover:border-gym-primary/40 hover:bg-white transition-all duration-300 cursor-pointer transform hover:scale-105"
               onClick={handleInstagramClick}
             >
@@ -375,7 +512,7 @@ export default function GymLandingPage() {
             </Card>
 
             {/* Map Card */}
-            <Card 
+            <Card
               className="bg-white/90 backdrop-blur-sm border-gray-200 text-center shadow-sm hover:shadow-lg hover:border-gym-primary/40 hover:bg-white transition-all duration-300 cursor-pointer transform hover:scale-105"
               onClick={handleMapClick}
             >
@@ -393,11 +530,11 @@ export default function GymLandingPage() {
           {/* Google Maps Embed */}
           <div className="max-w-4xl mx-auto">
             <div className="relative rounded-xl overflow-hidden shadow-lg">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1728.3366543638322!2d-71.3440601!3d-29.9600742!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9691c8fb878c1a35%3A0x178cdb2945622f61!2sOssand%C3%B3n%2019%2C%201781295%20Coquimbo!5e0!3m2!1ses-419!2scl!4v1756492361103!5m2!1ses-419!2scl" 
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1728.3366543638322!2d-71.3440601!3d-29.9600742!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9691c8fb878c1a35%3A0x178cdb2945622f61!2sOssand%C3%B3n%2019%2C%201781295%20Coquimbo!5e0!3m2!1ses-419!2scl!4v1756492361103!5m2!1ses-419!2scl"
                 className="w-full h-96 border-0"
                 allowFullScreen={true}
-                loading="lazy" 
+                loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Ubicación GymTyme - Ossandón 19, Coquimbo"
               />
