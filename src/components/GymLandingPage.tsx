@@ -95,69 +95,107 @@ export default function GymLandingPage() {
       {/* Hero Section with Carousel */}
       <section
         id="bienvenida"
-        className="min-h-[100dvh] flex items-center justify-center relative"
+        className="min-h-[100dvh] flex items-center justify-center relative overflow-hidden"
         style={{
           background: `
-            radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
-            linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%)
+            radial-gradient(ellipse at top left, rgba(59, 130, 246, 0.15) 0%, transparent 60%),
+            radial-gradient(ellipse at bottom right, rgba(16, 185, 129, 0.15) 0%, transparent 60%),
+            radial-gradient(ellipse at center, rgba(113, 199, 224, 0.08) 0%, transparent 70%),
+            linear-gradient(135deg, #f8fafc 0%, #e2e8f0 30%, #f1f5f9 70%, #e2e8f0 100%)
           `
         }}
       >
-        <div className="container mx-auto px-4 relative z-10 w-full max-w-7xl">
-          <div className="w-full">
-            {/* Desktop: 5/7 layout, Mobile: stacked */}
-            <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[80vh] w-full">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-gym-primary/10 to-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-green-500/10 to-gym-primary/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-gym-primary/5 to-blue-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '4s'}}></div>
+        </div>
+        <div className="container mx-auto px-2 sm:px-4 lg:px-6 xl:px-8 relative z-10 w-full max-w-none">
+          <div className="w-full backdrop-blur-sm bg-white/5 rounded-3xl p-4 lg:p-6 xl:p-8 shadow-2xl border border-white/20">
+            {/* Desktop: 4/8 layout, Mobile: stacked */}
+            <div className="grid lg:grid-cols-12 gap-4 lg:gap-8 items-center min-h-[90vh] w-full">
 
-              {/* Text Column (5/12 on desktop) */}
-              <div className="lg:col-span-5 text-center lg:text-left order-1 lg:order-1">
+              {/* Text Column (4/12 on desktop) */}
+              <div className="lg:col-span-4 text-center lg:text-left order-1 lg:order-1 relative">
+                {/* Decorative element */}
+                <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-gym-primary/20 to-blue-500/20 rounded-full blur-3xl hidden lg:block animate-pulse" style={{animationDelay: '1s'}}></div>
+                
                 <img
                   src={TymeLogo}
                   alt="GymTyme Logo"
-                  className="mx-auto lg:mx-0 mb-8 h-20 lg:h-24"
+                  className="mx-auto lg:mx-0 mb-8 h-18 lg:h-20 xl:h-24 drop-shadow-xl transform hover:scale-105 transition-transform duration-300 relative z-10"
                 />
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-                  <span className="block text-gym-primary mb-2">Tu espacio fitness,</span>
-                  <span className="block">tu momento</span>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl 2xl:text-8xl font-bold mb-8 leading-tight relative">
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gym-primary via-blue-600 to-gym-primary mb-2 drop-shadow-lg animate-pulse">Tu espacio fitness,</span>
+                  <span className="block text-gray-800 drop-shadow-lg">tu momento</span>
+                  {/* Text glow effect */}
+                  <div className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-gym-primary/40 via-blue-600/40 to-gym-primary/40 blur-sm -z-10">
+                    <span className="block mb-2">Tu espacio fitness,</span>
+                    <span className="block">tu momento</span>
+                  </div>
+                  {/* Additional glow layer */}
+                  <div className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-gym-primary/20 via-blue-600/20 to-gym-primary/20 blur-lg -z-20">
+                    <span className="block mb-2">Tu espacio fitness,</span>
+                    <span className="block">tu momento</span>
+                  </div>
                 </h1>
 
-                <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
-                  Donde el fitness se encuentra with la excelencia. Transforma tu cuerpo,
-                  eleva tu mente y alcanza la grandeza que siempre has buscado.
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mt-10 relative">
+                  {/* Glow effect behind buttons */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-gym-primary/30 to-blue-500/30 rounded-3xl blur-2xl opacity-50 animate-pulse"></div>
+                  
                   <Button
                     size="lg"
                     onClick={handleWhatsAppClick}
-                    className="bg-gym-primary text-white hover:bg-gym-primary/90 shadow-lg font-semibold px-8 py-3"
+                    className="relative bg-gradient-to-r from-gym-primary via-blue-500 to-gym-primary text-white font-bold px-12 py-5 text-xl rounded-2xl border-2 border-white/30 backdrop-blur-sm transform hover:scale-110 hover:-translate-y-2 transition-all duration-500 shadow-2xl hover:shadow-gym-primary/50 group overflow-hidden"
                   >
-                    Comienza Tu Viaje
+                    {/* Shimmer effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                    {/* Inner glow */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-gym-primary/50 to-blue-500/50 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span className="relative z-10 flex items-center gap-3">
+                      🚀 Comienza Tu Viaje
+                    </span>
                   </Button>
+                  
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-gym-primary text-gym-primary hover:bg-gym-primary hover:text-white transition-colors px-8 py-3"
+                    className="relative bg-white/95 backdrop-blur-md border-3 border-gym-primary/60 text-gym-primary hover:bg-gradient-to-r hover:from-gym-primary hover:to-blue-500 hover:text-white hover:border-white/50 font-bold px-12 py-5 text-xl rounded-2xl shadow-xl transform hover:scale-110 hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl group overflow-hidden"
                     onClick={() => document.getElementById('planes')?.scrollIntoView({ behavior: 'smooth' })}
                   >
-                    Ver Planes
+                    {/* Shimmer effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gym-primary/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                    <span className="relative z-10 flex items-center gap-3">
+                      💪 Ver Planes
+                    </span>
                   </Button>
                 </div>
               </div>
 
-              {/* Carousel Column (7/12 on desktop) */}
-              <div className="lg:col-span-7 order-2 lg:order-2 w-full">
+              {/* Carousel Column (8/12 on desktop) */}
+              <div className="lg:col-span-8 order-2 lg:order-2 w-full relative">
+                {/* Decorative elements around carousel */}
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-gym-primary/25 to-blue-500/25 rounded-full blur-3xl hidden lg:block animate-pulse" style={{animationDelay: '3s'}}></div>
+                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-gradient-to-tr from-green-500/25 to-gym-primary/25 rounded-full blur-3xl hidden lg:block animate-pulse" style={{animationDelay: '5s'}}></div>
+                
                 <div
-                  className="relative rounded-2xl overflow-hidden shadow-2xl group w-full"
+                  className="relative rounded-3xl overflow-hidden shadow-2xl group w-full backdrop-blur-sm bg-gradient-to-br from-white/20 to-white/5 p-3 border-2 border-white/30"
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                 >
+                  {/* Outer glow effect */}
+                  <div className="absolute -inset-6 bg-gradient-to-r from-gym-primary/40 via-blue-500/40 to-gym-primary/40 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse"></div>
+                  
+                  {/* Inner container with premium styling */}
+                  <div className="relative rounded-2xl overflow-hidden shadow-inner bg-gradient-to-br from-gray-900/10 to-gray-900/5 border border-white/20">
 
-                  {/* Carousel Container */}
+                  {/* Carousel Container - Mucho más alto */}
                   <div
                     className="relative w-full overflow-hidden
-                      aspect-[4/3] sm:aspect-[16/10] md:aspect-[16/9] lg:aspect-[16/9]"
+                      aspect-[4/3] sm:aspect-[16/10] md:aspect-[16/9] lg:aspect-[16/9] xl:aspect-[178/100] 2xl:aspect-[16/8]"
                   >
                     {/* Images */}
                     {carouselImages.map((image, index) => (
@@ -170,44 +208,56 @@ export default function GymLandingPage() {
                         <img
                           src={image}
                           alt={`TYME Gym Slide ${index + 1}`}
-                          className="w-full h-full object-cover object-center"
+                          className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-1000"
                           loading={index === 0 ? 'eager' : 'lazy'}
                         />
-                        {/* Subtle overlay for better contrast */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                        {/* Enhanced overlay with gym vibe */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-gym-primary/8 via-transparent to-blue-500/8"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-gym-primary/5 to-transparent"></div>
+                        
+                        {/* Fitness motivation overlay */}
+                        <div className="absolute bottom-8 left-8 text-white z-10 opacity-0 group-hover:opacity-100 transition-all duration-700 transform translate-y-4 group-hover:translate-y-0">
+                          <div className="bg-black/60 backdrop-blur-md px-6 py-3 rounded-xl border border-white/30 shadow-xl">
+                            <p className="font-bold text-xl">💪 Transform Your Body</p>
+                            <p className="text-base opacity-90 mt-1">Achieve Your Fitness Goals</p>
+                          </div>
+                        </div>
                       </div>
                     ))}
 
-                    {/* Navigation Arrows */}
+                    {/* Enhanced Navigation Arrows */}
                     <button
                       onClick={prevSlide}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
+                      className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-md hover:bg-white text-gray-800 p-4 rounded-full shadow-2xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-125 border-2 border-white/50 hover:shadow-gym-primary/30"
                       aria-label="Imagen anterior"
                     >
-                      <ChevronLeft className="h-5 w-5" />
+                      <ChevronLeft className="h-7 w-7" />
                     </button>
 
                     <button
                       onClick={nextSlide}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
+                      className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-md hover:bg-white text-gray-800 p-4 rounded-full shadow-2xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-125 border-2 border-white/50 hover:shadow-gym-primary/30"
                       aria-label="Siguiente imagen"
                     >
-                      <ChevronRight className="h-5 w-5" />
+                      <ChevronRight className="h-7 w-7" />
                     </button>
 
-                    {/* Dots Indicators */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                    {/* Enhanced Dots Indicators */}
+                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-4 bg-black/40 backdrop-blur-md px-6 py-3 rounded-full border border-white/30 shadow-xl">
                       {carouselImages.map((_, index) => (
                         <button
                           key={index}
                           onClick={() => goToSlide(index)}
-                          className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
-                            ? 'bg-gym-primary shadow-lg scale-110'
-                            : 'bg-white/60 hover:bg-white/80'
-                            }`}
+                          className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                            index === currentSlide
+                              ? 'bg-gym-primary shadow-lg scale-150 shadow-gym-primary/60'
+                              : 'bg-white/60 hover:bg-white/90 hover:scale-125'
+                          }`}
                           aria-label={`Ir a imagen ${index + 1}`}
                         />
                       ))}
+                    </div>
                     </div>
                   </div>
 
