@@ -266,8 +266,8 @@ export default function GymLandingPage() {
                           onClick={() => goToSlide(index)}
                           className={`w-5 h-5 rounded-full transition-all duration-300 ${
                             index === currentSlide
-                              ? 'bg-gym-primary shadow-lg scale-150 shadow-gym-primary/60'
-                              : 'bg-white/70 hover:bg-white/90 hover:scale-125'
+                              ? 'bg-gym-primary shadow-lg scale-150 shadow-gym-primary/60 border-2 border-white ring-2 ring-white/50'
+                              : 'bg-white/70 hover:bg-white/90 hover:scale-125 border border-white/30'
                           }`}
                           aria-label={`Ir a imagen ${index + 1}`}
                         />
