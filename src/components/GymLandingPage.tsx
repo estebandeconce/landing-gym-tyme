@@ -21,6 +21,7 @@ import { useState, useEffect } from 'react'
 import TymeLogo from '@/assets/landing/tyme_logo.webp'
 import PlanEsencialBg from '@/assets/landing/plan_esencial.webp'
 import PlanPersonalizadoBg from '@/assets/landing/plan_personalizado.webp'
+import PlanIntegralBg from '@/assets/landing/carrousel/Carrousel_2.jpg'
 import Carrousel1 from '@/assets/landing/carrousel/Carrousel_1.jpg'
 import Carrousel2 from '@/assets/landing/carrousel/Carrousel_2.jpg'
 import Carrousel3 from '@/assets/landing/carrousel/Carrousel_3.jpg'
@@ -348,67 +349,26 @@ export default function GymLandingPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Plan Esencial */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-8xl mx-auto">
+            {/* Plan Personalizado - BEST SELLER */}
             <Card
-              className="relative overflow-hidden rounded-3xl border-2 border-transparent hover:border-gym-primary transition-all duration-300 group shadow-xl flex flex-col"
-              style={{
-                backgroundImage: `url(${PlanEsencialBg})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40 group-hover:from-black/95 transition-all duration-300"></div>
-              <div className="relative h-full flex flex-col p-8 text-white">
-                <CardHeader>
-                  <CardTitle className="text-4xl font-bold mb-1">Plan Esencial</CardTitle>
-                  <CardDescription className="text-gray-300 text-lg">Entrenamiento en sala</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow space-y-3 mt-4">
-                  {[
-                    "Evaluación funcional",
-                    "Evaluación de fuerza y técnica",
-                    "Evaluación InBody",
-                    "Rutina y planificación",
-                    "Reserva de sala en aplicación box magic",
-                  ].map((feature, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-gym-primary flex-shrink-0" />
-                      <span className="text-gray-200">{feature}</span>
-                    </div>
-                  ))}
-                </CardContent>
-                <div className="mt-auto pt-8">
-                  <div className="text-right mb-4">
-                    <p className="text-4xl font-bold">Valor: $55.000</p>
-                    <p className="text-gym-primary font-semibold text-xl">Valor estudiante: $40.000</p>
-                  </div>
-                  {/* <Button className="w-full bg-gym-primary text-white font-bold text-lg py-6 hover:bg-gym-primary/90 shadow-lg transform hover:scale-105 transition-transform">
-                    Comienza Ahora
-                  </Button> */}
-                </div>
-              </div>
-            </Card>
-
-            {/* Plan Personalizado */}
-            <Card
-              className="relative overflow-hidden rounded-3xl border-2 border-gym-primary transition-all duration-300 group shadow-2xl flex flex-col"
+              className="relative overflow-hidden rounded-3xl border-4 transition-all duration-300 group shadow-2xl flex flex-col animate-pulse-border"
               style={{
                 backgroundImage: `url(${PlanPersonalizadoBg})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
             >
-              <Badge className="absolute top-4 right-4 bg-gym-primary text-white font-bold">
-                Recomendado
+              <Badge className="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold text-lg px-4 py-2 z-20 shadow-lg">
+                🔥 BEST SELLER
               </Badge>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40 group-hover:from-black/95 transition-all duration-300"></div>
-              <div className="relative h-full flex flex-col p-8 text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/75 to-black/45 group-hover:from-black/100 transition-all duration-300"></div>
+              <div className="relative h-full flex flex-col p-8 text-white min-h-[600px] z-10">
                 <CardHeader>
-                  <CardTitle className="text-4xl font-bold mb-1">Plan Personalizado</CardTitle>
-                  <CardDescription className="text-gray-300 text-lg">Maximiza tus resultados</CardDescription>
+                  <CardTitle className="text-4xl lg:text-5xl font-bold mb-2 text-yellow-400">Plan Personalizado</CardTitle>
+                  <CardDescription className="text-gray-200 text-xl font-medium">Maximiza tus resultados</CardDescription>
                 </CardHeader>
-                <CardContent className="flex-grow space-y-3 mt-4">
+                <CardContent className="flex-grow space-y-4 mt-6">
                   {[
                     "Todo lo del Plan Esencial",
                     "Entrenador personal asignado",
@@ -419,18 +379,130 @@ export default function GymLandingPage() {
                     "Acceso 24/7"
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-gym-primary flex-shrink-0" />
-                      <span className="text-gray-200">{feature}</span>
+                      <CheckCircle className="h-6 w-6 text-yellow-400 flex-shrink-0" />
+                      <span className="text-gray-100 text-lg font-medium">{feature}</span>
                     </div>
                   ))}
                 </CardContent>
                 <div className="mt-auto pt-8">
-                  <div className="text-right mb-4">
-                    <p className="text-4xl font-bold">Valor: $59.990</p>
+                  <div className="text-center mb-6">
+                    <p className="text-5xl font-bold text-yellow-400 mb-2">$59.990</p>
+                    <p className="text-gray-300 text-lg">¡El más elegido!</p>
                   </div>
-                  {/* <Button className="w-full bg-gym-primary text-white font-bold text-lg py-6 hover:bg-gym-primary/90 shadow-lg transform hover:scale-105 transition-transform">
-                    Elige Personalizado
-                  </Button> */}
+                  <Button 
+                    onClick={() => {
+                      const phoneNumber = "56959889632"
+                      const message = "¡Hola! Quiero transformar mi vida y alcanzar mis objetivos fitness con el Plan Personalizado. ¿Podrían ayudarme a comenzar mi camino hacia una mejor versión de mí mismo?"
+                      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+                      window.open(whatsappUrl, '_blank')
+                    }}
+                    className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold text-xl py-8 hover:from-yellow-500 hover:to-orange-600 shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer"
+                  >
+                    🚀 ¡Quiero este plan!
+                  </Button>
+                </div>
+              </div>
+            </Card>
+
+            {/* Plan Esencial */}
+            <Card
+              className="relative overflow-hidden rounded-3xl border-2 border-transparent hover:border-gym-primary transition-all duration-300 group shadow-xl flex flex-col"
+              style={{
+                backgroundImage: `url(${PlanEsencialBg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/75 to-black/45 group-hover:from-black/100 transition-all duration-300"></div>
+              <div className="relative h-full flex flex-col p-8 text-white min-h-[600px] z-10">
+                <CardHeader>
+                  <CardTitle className="text-4xl font-bold mb-2">Plan Esencial</CardTitle>
+                  <CardDescription className="text-gray-200 text-xl">Entrenamiento en sala</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow space-y-4 mt-6">
+                  {[
+                    "Evaluación funcional",
+                    "Evaluación de fuerza y técnica",
+                    "Evaluación InBody",
+                    "Rutina y planificación",
+                    "Reserva de sala en aplicación box magic",
+                  ].map((feature, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <CheckCircle className="h-6 w-6 text-gym-primary flex-shrink-0" />
+                      <span className="text-gray-100 text-lg">{feature}</span>
+                    </div>
+                  ))}
+                </CardContent>
+                <div className="mt-auto pt-8">
+                  <div className="text-center mb-6">
+                    <p className="text-4xl font-bold text-gym-primary mb-1">$55.000</p>
+                    <p className="text-gym-primary font-semibold text-xl">Estudiante: $40.000</p>
+                  </div>
+                  <Button 
+                    onClick={() => {
+                      const phoneNumber = "56959889632"
+                      const message = "¡Hola! Quiero comenzar mi camino fitness y mejorar mi salud con el Plan Esencial. ¿Podrían brindarme más información para empezar?"
+                      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+                      window.open(whatsappUrl, '_blank')
+                    }}
+                    className="w-full bg-gym-primary text-white font-bold text-xl py-8 hover:bg-gym-primary/90 shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer"
+                  >
+                    💪 ¡Quiero este plan!
+                  </Button>
+                </div>
+              </div>
+            </Card>
+
+            {/* Plan Integral */}
+            <Card
+              className="relative overflow-hidden rounded-3xl border-2 border-transparent hover:border-gym-primary transition-all duration-300 group shadow-xl flex flex-col"
+              style={{
+                backgroundImage: `url(${PlanIntegralBg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <Badge className="absolute top-4 right-4 bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-bold text-lg px-4 py-2 z-20 shadow-lg">
+                👑 PREMIUM
+              </Badge>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/75 to-black/45 group-hover:from-black/100 transition-all duration-300"></div>
+              <div className="relative h-full flex flex-col p-8 text-white min-h-[600px] z-10">
+                <CardHeader>
+                  <CardTitle className="text-4xl font-bold mb-2 text-purple-300">Plan Integral</CardTitle>
+                  <CardDescription className="text-gray-200 text-xl">Transformación completa</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow space-y-4 mt-6">
+                  {[
+                    "Todo lo del Plan Personalizado",
+                    "Visita mensual a nutricionista",
+                    "Plan nutricional personalizado",
+                    "Seguimiento nutricional continuo",
+                    "Consulta de suplementación",
+                    "Acceso prioritario a nuevas clases",
+                    "Atención VIP"
+                  ].map((feature, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <CheckCircle className="h-6 w-6 text-purple-300 flex-shrink-0" />
+                      <span className="text-gray-100 text-lg">{feature}</span>
+                    </div>
+                  ))}
+                </CardContent>
+                <div className="mt-auto pt-8">
+                  <div className="text-center mb-6">
+                    <p className="text-4xl font-bold text-purple-300">$100.000</p>
+                    <p className="text-gray-300 text-lg">Experiencia premium</p>
+                  </div>
+                  <Button 
+                    onClick={() => {
+                      const phoneNumber = "56959889632"
+                      const message = "¡Hola! Estoy interesado/a en la experiencia premium completa con el Plan Integral, incluyendo el seguimiento nutricional. ¿Podrían ayudarme a comenzar esta transformación integral?"
+                      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+                      window.open(whatsappUrl, '_blank')
+                    }}
+                    className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-bold text-xl py-8 hover:from-purple-600 hover:to-indigo-700 shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer"
+                  >
+                    ✨ ¡Quiero este plan!
+                  </Button>
                 </div>
               </div>
             </Card>
@@ -544,4 +616,43 @@ export default function GymLandingPage() {
       </section>
     </div>
   )
+}
+
+// Estilos CSS adicionales para el efecto de borde animado
+const styles = `
+  @keyframes borderGlow {
+    0% {
+      border-color: #ffd700;
+      box-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700, 0 0 60px #ffd700;
+    }
+    25% {
+      border-color: #ffcc00;
+      box-shadow: 0 0 20px #ffcc00, 0 0 40px #ffcc00, 0 0 60px #ffcc00;
+    }
+    50% {
+      border-color: #ff8c00;
+      box-shadow: 0 0 20px #ff8c00, 0 0 40px #ff8c00, 0 0 60px #ff8c00;
+    }
+    75% {
+      border-color: #ffa500;
+      box-shadow: 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ffa500;
+    }
+    100% {
+      border-color: #ffd700;
+      box-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700, 0 0 60px #ffd700;
+    }
+  }
+  
+  .animate-pulse-border {
+    animation: borderGlow 3s ease-in-out infinite;
+    border-radius: 1.5rem; /* Coincide con rounded-3xl de Tailwind */
+  }
+`;
+
+// Inyectar estilos
+if (typeof document !== 'undefined') {
+  const styleSheet = document.createElement("style");
+  styleSheet.type = "text/css";
+  styleSheet.innerText = styles;
+  document.head.appendChild(styleSheet);
 }
