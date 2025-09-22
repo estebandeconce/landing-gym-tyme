@@ -112,7 +112,7 @@ export default function GymLandingPage() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-gym-primary/5 to-blue-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '4s'}}></div>
         </div>
         <div className="container mx-auto px-2 sm:px-4 lg:px-6 xl:px-8 relative z-10 w-full max-w-none">
-          <div className="w-full backdrop-blur-sm bg-white/5 rounded-3xl p-4 lg:p-6 xl:p-8 shadow-2xl border border-white/20">
+          <div className="w-full">
             {/* Desktop: 4/8 layout, Mobile: stacked */}
             <div className="grid lg:grid-cols-12 gap-4 lg:gap-8 items-center min-h-[90vh] w-full">
 
@@ -182,7 +182,7 @@ export default function GymLandingPage() {
                 <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-gradient-to-tr from-green-500/25 to-gym-primary/25 rounded-full blur-3xl hidden lg:block animate-pulse" style={{animationDelay: '5s'}}></div>
                 
                 <div
-                  className="relative rounded-3xl overflow-hidden shadow-2xl group w-full backdrop-blur-sm bg-gradient-to-br from-white/20 to-white/5 p-3 border-2 border-white/30"
+                  className="relative rounded-3xl overflow-hidden shadow-2xl group w-full"
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                 >
@@ -190,7 +190,7 @@ export default function GymLandingPage() {
                   <div className="absolute -inset-6 bg-gradient-to-r from-gym-primary/40 via-blue-500/40 to-gym-primary/40 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse"></div>
                   
                   {/* Inner container with premium styling */}
-                  <div className="relative rounded-2xl overflow-hidden shadow-inner bg-gradient-to-br from-gray-900/10 to-gray-900/5 border border-white/20">
+                  <div className="relative rounded-2xl overflow-hidden shadow-inner">
 
                   {/* Carousel Container - Mucho más alto */}
                   <div
@@ -252,7 +252,7 @@ export default function GymLandingPage() {
                           className={`w-4 h-4 rounded-full transition-all duration-300 ${
                             index === currentSlide
                               ? 'bg-gym-primary shadow-lg scale-150 shadow-gym-primary/60'
-                              : 'bg-white/60 hover:bg-white/90 hover:scale-125'
+                              : 'bg-white/70 hover:bg-white/90 hover:scale-125'
                           }`}
                           aria-label={`Ir a imagen ${index + 1}`}
                         />
