@@ -552,61 +552,68 @@ export default function GymLandingPage() {
             </Button> */}
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
             {/* WhatsApp Card */}
-            <Card
-              className="bg-white/90 backdrop-blur-sm border-gray-200 text-center shadow-sm hover:shadow-lg hover:border-gym-primary/40 hover:bg-white transition-all duration-300 cursor-pointer transform hover:scale-105"
+            <Card 
+              className="relative overflow-hidden bg-gradient-to-br from-green-400 via-green-500 to-green-600 border-2 border-green-300 text-center shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group"
               onClick={handleWhatsAppClick}
             >
-              <CardHeader>
-                <Phone className="h-8 w-8 text-gym-primary mx-auto mb-2" />
-                <CardTitle className="text-gray-800">Llámanos</CardTitle>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent group-hover:from-black/30 transition-all duration-300"></div>
+              <CardHeader className="relative z-10">
+                <div className="mx-auto mb-4 w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:bg-white/30 transition-all duration-300">
+                  <Phone className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-white text-2xl font-bold">Llámanos</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-gray-700">+56 9 5988 9632</p>
-                <p className="text-gym-primary text-sm font-medium">¡Envíanos un mensaje!</p>
+              <CardContent className="relative z-10">
+                <p className="text-white/90 text-lg font-semibold">+56 9 5988 9632</p>
+                <p className="text-white/80 text-lg font-bold mt-2">💬 ¡Envíanos un mensaje!</p>
               </CardContent>
             </Card>
 
             {/* Instagram Card */}
-            <Card
-              className="bg-white/90 backdrop-blur-sm border-gray-200 text-center shadow-sm hover:shadow-lg hover:border-gym-primary/40 hover:bg-white transition-all duration-300 cursor-pointer transform hover:scale-105"
+            <Card 
+              className="relative overflow-hidden bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 border-2 border-pink-300 text-center shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group"
               onClick={handleInstagramClick}
             >
-              <CardHeader>
-                <Instagram className="h-8 w-8 text-gym-primary mx-auto mb-2" />
-                <CardTitle className="text-gray-800">Síguenos</CardTitle>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent group-hover:from-black/30 transition-all duration-300"></div>
+              <CardHeader className="relative z-10">
+                <div className="mx-auto mb-4 w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:bg-white/30 transition-all duration-300">
+                  <Instagram className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-white text-2xl font-bold">Síguenos</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-gray-700">@somostyme</p>
-                <p className="text-gym-primary text-sm font-medium">¡El mejor contenido para tu salud!</p>
+              <CardContent className="relative z-10">
+                <p className="text-white/90 text-lg font-semibold">@somostyme</p>
+                <p className="text-white/80 text-lg font-bold mt-2">💪 ¡El mejor contenido para tu salud!</p>
               </CardContent>
             </Card>
 
             {/* Map Card */}
-            <Card
-              className="bg-white/90 backdrop-blur-sm border-gray-200 text-center shadow-sm hover:shadow-lg hover:border-gym-primary/40 hover:bg-white transition-all duration-300 cursor-pointer transform hover:scale-105"
+            <Card 
+              className="relative overflow-hidden bg-gradient-to-br from-gym-primary via-blue-400 to-blue-600 border-2 border-gym-primary/50 text-center shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group"
               onClick={handleMapClick}
             >
-              <CardHeader>
-                <MapPin className="h-8 w-8 text-gym-primary mx-auto mb-2" />
-                <CardTitle className="text-gray-800">Visítanos</CardTitle>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent group-hover:from-black/30 transition-all duration-300"></div>
+              <CardHeader className="relative z-10">
+                <div className="mx-auto mb-4 w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:bg-white/30 transition-all duration-300">
+                  <MapPin className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-white text-2xl font-bold">Visítanos</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-gray-700">Ossandón 19, Coquimbo</p>
-                <p className="text-gym-primary text-sm font-medium">¡A solo pasos del centro!</p>
+              <CardContent className="relative z-10">
+                <p className="text-white/90 text-lg font-semibold">Ossandón 19, Coquimbo</p>
+                <p className="text-white/80 text-lg font-bold mt-2">📍 ¡A solo pasos del centro!</p>
               </CardContent>
             </Card>
-          </div>
-
-          {/* Google Maps Embed */}
-          <div className="max-w-4xl mx-auto">
-            <div className="relative rounded-xl overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1728.3366543638322!2d-71.3440601!3d-29.9600742!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9691c8fb878c1a35%3A0x178cdb2945622f61!2sOssand%C3%B3n%2019%2C%201781295%20Coquimbo!5e0!3m2!1ses-419!2scl!4v1756492361103!5m2!1ses-419!2scl"
-                className="w-full h-96 border-0"
+          </div>          {/* Google Maps Embed */}
+          <div className="w-full px-2 sm:px-4 lg:px-6 xl:px-8 2xl:px-12">
+            <div className="relative rounded-xl overflow-hidden shadow-2xl">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1728.3366543638322!2d-71.3440601!3d-29.9600742!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9691c8fb878c1a35%3A0x178cdb2945622f61!2sOssand%C3%B3n%2019%2C%201781295%20Coquimbo!5e0!3m2!1ses-419!2scl!4v1756492361103!5m2!1ses-419!2scl" 
+                className="w-full h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] 2xl:h-[800px] border-0"
                 allowFullScreen={true}
-                loading="lazy"
+                loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Ubicación GymTyme - Ossandón 19, Coquimbo"
               />
