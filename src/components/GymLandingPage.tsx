@@ -192,10 +192,13 @@ export default function GymLandingPage() {
                   {/* Inner container with premium styling */}
                   <div className="relative rounded-2xl overflow-hidden shadow-inner">
 
-                  {/* Carousel Container - Mucho más alto */}
+                  {/* Carousel Container - 100% altura en escritorio */}
                   <div
                     className="relative w-full overflow-hidden
-                      aspect-[4/3] sm:aspect-[16/10] md:aspect-[16/9] lg:aspect-[16/9] xl:aspect-[178/100] 2xl:aspect-[16/8]"
+                      aspect-[4/3] sm:aspect-[16/10] md:aspect-[16/9] lg:h-[85vh] xl:h-[90vh] 2xl:h-[85vh]"
+                    style={{
+                      aspectRatio: 'auto'
+                    }}
                   >
                     {/* Images */}
                     {carouselImages.map((image, index) => (
@@ -209,6 +212,9 @@ export default function GymLandingPage() {
                           src={image}
                           alt={`TYME Gym Slide ${index + 1}`}
                           className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-1000"
+                          style={{
+                            objectPosition: 'center center'
+                          }}
                           loading={index === 0 ? 'eager' : 'lazy'}
                         />
                         {/* Enhanced overlay with gym vibe */}
@@ -216,40 +222,49 @@ export default function GymLandingPage() {
                         <div className="absolute inset-0 bg-gradient-to-r from-gym-primary/8 via-transparent to-blue-500/8"></div>
                         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-gym-primary/5 to-transparent"></div>
                         
-                        {/* Fitness motivation overlay */}
-                        <div className="absolute bottom-8 left-8 text-white z-10 opacity-0 group-hover:opacity-100 transition-all duration-700 transform translate-y-4 group-hover:translate-y-0">
-                          <div className="bg-black/60 backdrop-blur-md px-6 py-3 rounded-xl border border-white/30 shadow-xl">
-                            <p className="font-bold text-xl">💪 Transform Your Body</p>
-                            <p className="text-base opacity-90 mt-1">Achieve Your Fitness Goals</p>
+                        {/* Fitness motivation overlay - Mejorado para altura completa */}
+                        <div className="absolute bottom-10 left-10 text-white z-10 opacity-0 group-hover:opacity-100 transition-all duration-700 transform translate-y-4 group-hover:translate-y-0">
+                          <div className="bg-black/70 backdrop-blur-md px-8 py-4 rounded-2xl border border-white/40 shadow-2xl">
+                            <p className="font-bold text-2xl mb-1">💪 Transform Your Body</p>
+                            <p className="text-lg opacity-90">Achieve Your Fitness Goals</p>
+                            <div className="h-1 w-16 bg-gradient-to-r from-gym-primary to-blue-500 rounded-full mt-2"></div>
+                          </div>
+                        </div>
+                        
+                        {/* Gym branding overlay superior */}
+                        <div className="absolute top-8 right-8 text-white z-10 opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                          <div className="bg-black/50 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/20">
+                            <p className="font-bold text-lg text-gym-primary">GYMTYME</p>
+                            <p className="text-sm opacity-80">Professional Fitness</p>
                           </div>
                         </div>
                       </div>
                     ))}
 
-                    {/* Enhanced Navigation Arrows */}
+                    {/* Enhanced Navigation Arrows - Adaptadas para altura completa */}
                     <button
                       onClick={prevSlide}
-                      className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-md hover:bg-white text-gray-800 p-4 rounded-full shadow-2xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-125 border-2 border-white/50 hover:shadow-gym-primary/30"
+                      className="absolute left-8 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-md hover:bg-white text-gray-800 p-5 rounded-full shadow-2xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-125 border-2 border-white/50 hover:shadow-gym-primary/30"
                       aria-label="Imagen anterior"
                     >
-                      <ChevronLeft className="h-7 w-7" />
+                      <ChevronLeft className="h-8 w-8" />
                     </button>
 
                     <button
                       onClick={nextSlide}
-                      className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-md hover:bg-white text-gray-800 p-4 rounded-full shadow-2xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-125 border-2 border-white/50 hover:shadow-gym-primary/30"
+                      className="absolute right-8 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-md hover:bg-white text-gray-800 p-5 rounded-full shadow-2xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-125 border-2 border-white/50 hover:shadow-gym-primary/30"
                       aria-label="Siguiente imagen"
                     >
-                      <ChevronRight className="h-7 w-7" />
+                      <ChevronRight className="h-8 w-8" />
                     </button>
 
-                    {/* Enhanced Dots Indicators */}
-                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-4 bg-black/40 backdrop-blur-md px-6 py-3 rounded-full border border-white/30 shadow-xl">
+                    {/* Enhanced Dots Indicators - Adaptados para altura completa */}
+                    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex space-x-4 bg-black/50 backdrop-blur-md px-8 py-4 rounded-full border border-white/40 shadow-2xl">
                       {carouselImages.map((_, index) => (
                         <button
                           key={index}
                           onClick={() => goToSlide(index)}
-                          className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                          className={`w-5 h-5 rounded-full transition-all duration-300 ${
                             index === currentSlide
                               ? 'bg-gym-primary shadow-lg scale-150 shadow-gym-primary/60'
                               : 'bg-white/70 hover:bg-white/90 hover:scale-125'
