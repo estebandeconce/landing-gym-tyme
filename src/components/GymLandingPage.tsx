@@ -508,7 +508,7 @@ export default function GymLandingPage() {
                       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
                       window.open(whatsappUrl, '_blank')
                     }}
-                    className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-xl py-8 hover:from-emerald-600 hover:to-teal-700 shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer"
+                    className="w-full bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold text-xl py-8 hover:from-cyan-500 hover:to-blue-600 shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer"
                   >
                     💪 ¡Quiero este plan!
                   </Button>
