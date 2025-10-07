@@ -67,6 +67,27 @@ export default function GymLandingPage() {
     window.open('https://maps.app.goo.gl/g1hTsWJiinpBtdYn8', '_blank')
   }
 
+  // Hook para animaciones de scroll
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('scroll-visible')
+        }
+      })
+    }, observerOptions)
+
+    const elementsToObserve = document.querySelectorAll('.scroll-fade-in')
+    elementsToObserve.forEach((el) => observer.observe(el))
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 relative">
       {/* Floating Menu Button - Top Right */}
@@ -113,44 +134,57 @@ export default function GymLandingPage() {
 
               {/* Text Column (4/12 on desktop) */}
               <div className="lg:col-span-4 text-center lg:text-left order-1 lg:order-1 relative">
-                {/* Decorative element */}
-                <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-gym-primary/20 to-blue-500/20 rounded-full blur-3xl hidden lg:block animate-pulse" style={{animationDelay: '1s'}}></div>
+                {/* Elemento decorativo mejorado con respiración calmante */}
+                <div 
+                  className="absolute -top-8 -left-8 w-40 h-40 bg-gradient-to-br from-gym-primary/15 to-blue-500/15 rounded-full blur-2xl hidden lg:block"
+                  style={{
+                    animation: 'breathe 6s ease-in-out infinite',
+                  }}
+                ></div>
                 
+                {/* Logo más grande */}
                 <img
                   src={TymeLogo}
                   alt="GymTyme Logo"
-                  className="mx-auto lg:mx-0 mb-8 h-18 lg:h-20 xl:h-24 drop-shadow-xl transform hover:scale-105 transition-transform duration-300 relative z-10"
+                  className="mx-auto lg:mx-0 mb-10 h-28 lg:h-32 xl:h-36 2xl:h-40 drop-shadow-xl transform hover:scale-105 transition-transform duration-300 relative z-10"
                 />
 
-                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl 2xl:text-8xl font-bold mb-8 leading-tight relative">
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gym-primary via-blue-600 to-gym-primary mb-2 drop-shadow-lg animate-pulse">Tu espacio fitness,</span>
-                  <span className="block text-gray-800 drop-shadow-lg">tu momento</span>
-                  {/* Text glow effect */}
-                  <div className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-gym-primary/40 via-blue-600/40 to-gym-primary/40 blur-sm -z-10">
-                    <span className="block mb-2">Tu espacio fitness,</span>
-                    <span className="block">tu momento</span>
-                  </div>
-                  {/* Additional glow layer */}
-                  <div className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-gym-primary/20 via-blue-600/20 to-gym-primary/20 blur-lg -z-20">
-                    <span className="block mb-2">Tu espacio fitness,</span>
-                    <span className="block">tu momento</span>
-                  </div>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl 2xl:text-8xl font-bold mb-10 leading-tight relative">
+                  <span className="block text-blue-600 mb-3 drop-shadow-lg">Tu espacio fitness</span>
+                  <span className="block text-gray-800 drop-shadow-lg">Tu momento</span>
                 </h1>
 
-                <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mt-10 relative">
-                  {/* Glow effect behind buttons */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-gym-primary/30 to-blue-500/30 rounded-3xl blur-2xl opacity-50 animate-pulse"></div>
+                <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mt-12 relative">
+                  {/* Glow effect behind buttons mejorado */}
+                  <div 
+                    className="absolute inset-0 bg-gradient-to-r from-gym-primary/20 to-blue-500/20 rounded-3xl blur-xl opacity-40"
+                    style={{
+                      animation: 'breathe 8s ease-in-out infinite 2s',
+                    }}
+                  ></div>
                   
+                  {/* Botón "Comienza Tu Viaje" mejorado */}
                   <Button
                     size="lg"
                     onClick={handleWhatsAppClick}
-                    className="relative bg-gradient-to-r from-gym-primary via-blue-500 to-gym-primary text-white font-bold px-12 py-5 text-xl rounded-2xl border-2 border-white/30 backdrop-blur-sm transform hover:scale-110 hover:-translate-y-2 transition-all duration-500 shadow-2xl hover:shadow-gym-primary/50 group overflow-hidden"
+                    className="relative bg-gradient-to-r from-gym-primary via-blue-500 to-gym-primary text-white font-bold px-14 py-6 text-xl rounded-2xl border-2 border-white/40 backdrop-blur-sm transform hover:scale-110 hover:-translate-y-2 transition-all duration-500 shadow-2xl hover:shadow-gym-primary/60 group overflow-hidden"
+                    style={{
+                      backgroundSize: '200% 100%',
+                      animation: 'gradientShift 4s ease-in-out infinite'
+                    }}
                   >
-                    {/* Shimmer effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                    {/* Inner glow */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-gym-primary/50 to-blue-500/50 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <span className="relative z-10 flex items-center gap-3">
+                    {/* Shimmer effect mejorado */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1200"></div>
+                    {/* Inner glow mejorado */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-gym-primary/60 to-blue-500/60 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    {/* Pulso sutil */}
+                    <div 
+                      className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 rounded-2xl"
+                      style={{
+                        animation: 'subtlePulse 3s ease-in-out infinite'
+                      }}
+                    ></div>
+                    <span className="relative z-10 flex items-center gap-3 font-extrabold">
                       🚀 Comienza Tu Viaje
                     </span>
                   </Button>
@@ -158,12 +192,12 @@ export default function GymLandingPage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="relative bg-white/95 backdrop-blur-md border-3 border-gym-primary/60 text-gym-primary hover:bg-gradient-to-r hover:from-gym-primary hover:to-blue-500 hover:text-white hover:border-white/50 font-bold px-12 py-5 text-xl rounded-2xl shadow-xl transform hover:scale-110 hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl group overflow-hidden"
+                    className="relative bg-white/95 backdrop-blur-md border-3 border-gym-primary/60 text-gym-primary hover:bg-gradient-to-r hover:from-gym-primary hover:to-blue-500 hover:text-white hover:border-white/50 font-bold px-12 py-6 text-xl rounded-2xl shadow-xl transform hover:scale-110 hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl group overflow-hidden"
                     onClick={() => document.getElementById('planes')?.scrollIntoView({ behavior: 'smooth' })}
                   >
                     {/* Shimmer effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gym-primary/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                    <span className="relative z-10 flex items-center gap-3">
+                    <span className="relative z-10 flex items-center gap-3 font-extrabold">
                       💪 Ver Planes
                     </span>
                   </Button>
@@ -380,7 +414,7 @@ export default function GymLandingPage() {
       {/* Plans Section */}
       <section
         id="planes"
-        className="min-h-[100dvh] py-32 relative"
+        className="min-h-[100dvh] py-32 relative scroll-fade-in"
         style={{
           background: `
             radial-gradient(ellipse at top left, rgba(34, 197, 94, 0.08) 0%, transparent 50%),
@@ -574,7 +608,7 @@ export default function GymLandingPage() {
       {/* Contact & CTA Section */}
       <section
         id="contacto"
-        className="min-h-[100dvh] py-32 relative border-t border-gray-200/30"
+        className="min-h-[100dvh] py-32 relative border-t border-gray-200/30 scroll-fade-in"
         style={{
           background: `
             radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 60%),
@@ -709,6 +743,86 @@ const styles = `
       border-color: #ffd700;
       box-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700, 0 0 60px #ffd700;
     }
+  }
+
+  @keyframes breathe {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    25% {
+      transform: scale(1.05);
+      opacity: 0.4;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.3;
+    }
+    75% {
+      transform: scale(1.05);
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes gradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes subtlePulse {
+    0%, 100% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .scroll-fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .scroll-fade-in.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Smooth scroll behavior para toda la página */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Animación de aparición más suave */
+  .scroll-fade-in {
+    transition: opacity 1s ease-out, transform 1s ease-out;
   }
   
   .animate-pulse-border {
