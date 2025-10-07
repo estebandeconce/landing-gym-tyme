@@ -314,6 +314,7 @@ export default function GymLandingPage() {
         id="motivacion"
         className="min-h-[100dvh] py-32 relative border-t border-gray-200/50"
         style={{
+          display: 'none',
           background: `
             radial-gradient(circle at 70% 10%, rgba(139, 69, 19, 0.08) 0%, transparent 60%),
             radial-gradient(circle at 30% 90%, rgba(255, 193, 7, 0.1) 0%, transparent 50%),
