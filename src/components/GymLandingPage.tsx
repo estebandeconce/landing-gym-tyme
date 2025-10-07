@@ -435,13 +435,11 @@ export default function GymLandingPage() {
                 </CardHeader>
                 <CardContent className="flex-grow space-y-4 mt-6">
                   {[
-                    "Todo lo del Plan Esencial",
-                    "Entrenador personal asignado",
-                    "Plan de entrenamiento 100% personalizado",
-                    "Evaluaciones físicas periódicas",
-                    "Asesoría nutricional completa",
-                    "Acceso ilimitado a todas las clases",
-                    "Acceso 24/7"
+                    "Entrenamiento 1 a 1 con tu preparador",
+                    "Evaluación funcional y de fuerza",
+                    "Medición de perímetros",
+                    "Control semanal",
+                    "Planificación enfocada en tus objetivos",
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center gap-3">
                       <CheckCircle className="h-6 w-6 text-yellow-400 flex-shrink-0" />
@@ -451,7 +449,7 @@ export default function GymLandingPage() {
                 </CardContent>
                 <div className="mt-auto pt-8">
                   <div className="text-center mb-6">
-                    <p className="text-5xl font-bold text-yellow-400 mb-2">$59.990</p>
+                    <p className="text-5xl font-bold text-yellow-400 mb-2">$129.990</p>
                     <p className="text-gray-300 text-lg">¡El más elegido!</p>
                   </div>
                   <Button 
@@ -488,9 +486,9 @@ export default function GymLandingPage() {
                   {[
                     "Evaluación funcional",
                     "Evaluación de fuerza y técnica",
-                    "Evaluación InBody",
+                    "Evaluación Corporal",
                     "Rutina y planificación",
-                    "Reserva de sala en aplicación box magic",
+                    "Máximo 15 personas en sala por bloques",
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center gap-3">
                       <CheckCircle className="h-6 w-6 text-gym-primary flex-shrink-0" />
@@ -500,8 +498,8 @@ export default function GymLandingPage() {
                 </CardContent>
                 <div className="mt-auto pt-8">
                   <div className="text-center mb-6">
-                    <p className="text-4xl font-bold text-gym-primary mb-1">$55.000</p>
-                    <p className="text-gym-primary font-semibold text-xl">Estudiante: $40.000</p>
+                    <p className="text-4xl font-bold text-gym-primary mb-1">$54.990</p>
+                    <p className="text-gym-primary font-semibold text-xl">Estudiante: $39.990</p>
                   </div>
                   <Button 
                     onClick={() => {
@@ -538,13 +536,15 @@ export default function GymLandingPage() {
                 </CardHeader>
                 <CardContent className="flex-grow space-y-4 mt-6">
                   {[
-                    "Todo lo del Plan Personalizado",
-                    "Visita mensual a nutricionista",
-                    "Plan nutricional personalizado",
-                    "Seguimiento nutricional continuo",
-                    "Consulta de suplementación",
-                    "Acceso prioritario a nuevas clases",
-                    "Atención VIP"
+                    "Entrenamiento 1 a 1 con tu preparador",
+                    "Evaluación funcional y de fuerza",
+                    "Toma de perímetros",
+                    "Planificación enfocada en tus objetivos",
+                    "Anamnesis completa",
+                    "Evaluación de composición corporal",
+                    "Establecimiento de objetivos realistas",
+                    "Educación nutricional",
+                    "Plan de alimentación personalizado",
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center gap-3">
                       <CheckCircle className="h-6 w-6 text-purple-300 flex-shrink-0" />
@@ -554,7 +554,7 @@ export default function GymLandingPage() {
                 </CardContent>
                 <div className="mt-auto pt-8">
                   <div className="text-center mb-6">
-                    <p className="text-4xl font-bold text-purple-300">$100.000</p>
+                    <p className="text-4xl font-bold text-purple-300">$149.990</p>
                     <p className="text-gray-300 text-lg">Experiencia premium</p>
                   </div>
                   <Button 
