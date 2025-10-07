@@ -67,26 +67,21 @@ export default function GymLandingPage() {
     window.open('https://maps.app.goo.gl/g1hTsWJiinpBtdYn8', '_blank')
   }
 
-  const handleMenuClick = () => {
-    // TODO: Implement menu functionality later
-    console.log('Menu clicked')
-  }
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 relative">
       {/* Floating Menu Button - Top Right */}
       <Button
-        onClick={handleMenuClick}
-        className="fixed top-6 right-6 z-50 bg-white/90 backdrop-blur-sm border border-gray-200 hover:bg-white hover:border-gym-primary shadow-lg"
+        onClick={() => window.open('https://tyme-frontend.vercel.app/', '_blank')}
+        className="fixed top-6 right-6 z-50 bg-white/90 backdrop-blur-sm border border-gray-200 hover:bg-gym-primary hover:border-gym-primary hover:scale-110 shadow-lg transition-all duration-300 cursor-pointer"
         size="icon"
       >
-        <Menu className="h-5 w-5 text-gray-700" />
+        <Menu className="h-5 w-5 text-gray-700 hover:text-white transition-colors duration-300" />
       </Button>
 
       {/* Floating WhatsApp Button - Bottom Right */}
       <Button
         onClick={handleWhatsAppClick}
-        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 shadow-lg"
+        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 shadow-lg cursor-pointer hover:scale-110 transition-all duration-300"
         size="icon"
       >
         <MessageCircle className="h-5 w-5 text-white" />
