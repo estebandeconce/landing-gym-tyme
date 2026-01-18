@@ -91,6 +91,7 @@ export default function GymLandingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 relative">
       {/* Floating Menu Button - Top Right */}
+      {/* //CAMBIAME */}
       <Button
         onClick={() => window.open('https://tyme-frontend.vercel.app/', '_blank')}
         className="fixed top-6 right-6 z-50 bg-white/90 backdrop-blur-sm border border-gray-200 hover:bg-gym-primary hover:border-gym-primary hover:scale-110 shadow-lg transition-all duration-300 cursor-pointer"
@@ -124,8 +125,8 @@ export default function GymLandingPage() {
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-gym-primary/10 to-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-green-500/10 to-gym-primary/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-gym-primary/5 to-blue-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '4s'}}></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-green-500/10 to-gym-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-gym-primary/5 to-blue-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
         </div>
         <div className="container mx-auto px-2 sm:px-4 lg:px-6 xl:px-8 relative z-10 w-full max-w-none">
           <div className="w-full">
@@ -135,13 +136,13 @@ export default function GymLandingPage() {
               {/* Text Column (4/12 on desktop) */}
               <div className="lg:col-span-4 text-center lg:text-left order-1 lg:order-1 relative">
                 {/* Elemento decorativo mejorado con respiración calmante */}
-                <div 
+                <div
                   className="absolute -top-8 -left-8 w-40 h-40 bg-gradient-to-br from-gym-primary/15 to-blue-500/15 rounded-full blur-2xl hidden lg:block"
                   style={{
                     animation: 'breathe 6s ease-in-out infinite',
                   }}
                 ></div>
-                
+
                 {/* Logo más grande */}
                 <img
                   src={TymeLogo}
@@ -156,13 +157,13 @@ export default function GymLandingPage() {
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mt-12 relative">
                   {/* Glow effect behind buttons mejorado */}
-                  <div 
+                  <div
                     className="absolute inset-0 bg-gradient-to-r from-gym-primary/20 to-blue-500/20 rounded-3xl blur-xl opacity-40"
                     style={{
                       animation: 'breathe 8s ease-in-out infinite 2s',
                     }}
                   ></div>
-                  
+
                   {/* Botón "Comienza Tu Viaje" mejorado */}
                   <Button
                     size="lg"
@@ -178,7 +179,7 @@ export default function GymLandingPage() {
                     {/* Inner glow mejorado */}
                     <div className="absolute inset-0 bg-gradient-to-r from-gym-primary/60 to-blue-500/60 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     {/* Pulso sutil */}
-                    <div 
+                    <div
                       className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 rounded-2xl"
                       style={{
                         animation: 'subtlePulse 3s ease-in-out infinite'
@@ -188,7 +189,7 @@ export default function GymLandingPage() {
                       🚀 Comienza Tu Viaje
                     </span>
                   </Button>
-                  
+
                   <Button
                     size="lg"
                     variant="outline"
@@ -207,9 +208,9 @@ export default function GymLandingPage() {
               {/* Carousel Column (8/12 on desktop) */}
               <div className="lg:col-span-8 order-2 lg:order-2 w-full relative">
                 {/* Decorative elements around carousel */}
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-gym-primary/25 to-blue-500/25 rounded-full blur-3xl hidden lg:block animate-pulse" style={{animationDelay: '3s'}}></div>
-                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-gradient-to-tr from-green-500/25 to-gym-primary/25 rounded-full blur-3xl hidden lg:block animate-pulse" style={{animationDelay: '5s'}}></div>
-                
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-gym-primary/25 to-blue-500/25 rounded-full blur-3xl hidden lg:block animate-pulse" style={{ animationDelay: '3s' }}></div>
+                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-gradient-to-tr from-green-500/25 to-gym-primary/25 rounded-full blur-3xl hidden lg:block animate-pulse" style={{ animationDelay: '5s' }}></div>
+
                 <div
                   className="relative rounded-3xl overflow-hidden shadow-2xl group w-full"
                   onMouseEnter={() => setIsHovered(true)}
@@ -217,91 +218,90 @@ export default function GymLandingPage() {
                 >
                   {/* Outer glow effect */}
                   <div className="absolute -inset-6 bg-gradient-to-r from-gym-primary/40 via-blue-500/40 to-gym-primary/40 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse"></div>
-                  
+
                   {/* Inner container with premium styling */}
                   <div className="relative rounded-2xl overflow-hidden shadow-inner">
 
-                  {/* Carousel Container - 100% altura en escritorio */}
-                  <div
-                    className="relative w-full overflow-hidden
+                    {/* Carousel Container - 100% altura en escritorio */}
+                    <div
+                      className="relative w-full overflow-hidden
                       aspect-[4/3] sm:aspect-[16/10] md:aspect-[16/9] lg:h-[85vh] xl:h-[90vh] 2xl:h-[85vh]"
-                    style={{
-                      aspectRatio: 'auto'
-                    }}
-                  >
-                    {/* Images */}
-                    {carouselImages.map((image, index) => (
-                      <div
-                        key={index}
-                        className={`absolute inset-0 transition-transform duration-700 ease-in-out ${index === currentSlide ? 'translate-x-0' :
-                          index < currentSlide ? '-translate-x-full' : 'translate-x-full'
-                          }`}
-                      >
-                        <img
-                          src={image}
-                          alt={`TYME Gym Slide ${index + 1}`}
-                          className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-1000"
-                          style={{
-                            objectPosition: 'center center'
-                          }}
-                          loading={index === 0 ? 'eager' : 'lazy'}
-                        />
-                        {/* Enhanced overlay with gym vibe */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"></div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-gym-primary/8 via-transparent to-blue-500/8"></div>
-                        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-gym-primary/5 to-transparent"></div>
-                        
-                        {/* Fitness motivation overlay - Mejorado para altura completa */}
-                        <div className="absolute bottom-10 left-10 text-white z-10 opacity-0 group-hover:opacity-100 transition-all duration-700 transform translate-y-4 group-hover:translate-y-0">
-                          <div className="bg-black/70 backdrop-blur-md px-8 py-4 rounded-2xl border border-white/40 shadow-2xl">
-                            <p className="font-bold text-2xl mb-1">💪 Transform Your Body</p>
-                            <p className="text-lg opacity-90">Achieve Your Fitness Goals</p>
-                            <div className="h-1 w-16 bg-gradient-to-r from-gym-primary to-blue-500 rounded-full mt-2"></div>
-                          </div>
-                        </div>
-                        
-                        {/* Gym branding overlay superior */}
-                        <div className="absolute top-8 right-8 text-white z-10 opacity-80 group-hover:opacity-100 transition-opacity duration-500">
-                          <div className="bg-black/50 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/20">
-                            <p className="font-bold text-lg text-gym-primary">GYMTYME</p>
-                            <p className="text-sm opacity-80">Professional Fitness</p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-
-                    {/* Enhanced Navigation Arrows - Adaptadas para altura completa */}
-                    <button
-                      onClick={prevSlide}
-                      className="absolute left-8 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-md hover:bg-white text-gray-800 p-5 rounded-full shadow-2xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-125 border-2 border-white/50 hover:shadow-gym-primary/30"
-                      aria-label="Imagen anterior"
+                      style={{
+                        aspectRatio: 'auto'
+                      }}
                     >
-                      <ChevronLeft className="h-8 w-8" />
-                    </button>
-
-                    <button
-                      onClick={nextSlide}
-                      className="absolute right-8 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-md hover:bg-white text-gray-800 p-5 rounded-full shadow-2xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-125 border-2 border-white/50 hover:shadow-gym-primary/30"
-                      aria-label="Siguiente imagen"
-                    >
-                      <ChevronRight className="h-8 w-8" />
-                    </button>
-
-                    {/* Enhanced Dots Indicators - Adaptados para altura completa */}
-                    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex space-x-4 bg-black/50 backdrop-blur-md px-8 py-4 rounded-full border border-white/40 shadow-2xl">
-                      {carouselImages.map((_, index) => (
-                        <button
+                      {/* Images */}
+                      {carouselImages.map((image, index) => (
+                        <div
                           key={index}
-                          onClick={() => goToSlide(index)}
-                          className={`w-5 h-5 rounded-full transition-all duration-300 ${
-                            index === currentSlide
-                              ? 'bg-gym-primary shadow-lg scale-150 shadow-gym-primary/60 border-2 border-white ring-2 ring-white/50'
-                              : 'bg-white/70 hover:bg-white/90 hover:scale-125 border border-white/30'
-                          }`}
-                          aria-label={`Ir a imagen ${index + 1}`}
-                        />
+                          className={`absolute inset-0 transition-transform duration-700 ease-in-out ${index === currentSlide ? 'translate-x-0' :
+                            index < currentSlide ? '-translate-x-full' : 'translate-x-full'
+                            }`}
+                        >
+                          <img
+                            src={image}
+                            alt={`TYME Gym Slide ${index + 1}`}
+                            className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-1000"
+                            style={{
+                              objectPosition: 'center center'
+                            }}
+                            loading={index === 0 ? 'eager' : 'lazy'}
+                          />
+                          {/* Enhanced overlay with gym vibe */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-gym-primary/8 via-transparent to-blue-500/8"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-gym-primary/5 to-transparent"></div>
+
+                          {/* Fitness motivation overlay - Mejorado para altura completa */}
+                          <div className="absolute bottom-10 left-10 text-white z-10 opacity-0 group-hover:opacity-100 transition-all duration-700 transform translate-y-4 group-hover:translate-y-0">
+                            <div className="bg-black/70 backdrop-blur-md px-8 py-4 rounded-2xl border border-white/40 shadow-2xl">
+                              <p className="font-bold text-2xl mb-1">💪 Transform Your Body</p>
+                              <p className="text-lg opacity-90">Achieve Your Fitness Goals</p>
+                              <div className="h-1 w-16 bg-gradient-to-r from-gym-primary to-blue-500 rounded-full mt-2"></div>
+                            </div>
+                          </div>
+
+                          {/* Gym branding overlay superior */}
+                          <div className="absolute top-8 right-8 text-white z-10 opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                            <div className="bg-black/50 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/20">
+                              <p className="font-bold text-lg text-gym-primary">GYMTYME</p>
+                              <p className="text-sm opacity-80">Professional Fitness</p>
+                            </div>
+                          </div>
+                        </div>
                       ))}
-                    </div>
+
+                      {/* Enhanced Navigation Arrows - Adaptadas para altura completa */}
+                      <button
+                        onClick={prevSlide}
+                        className="absolute left-8 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-md hover:bg-white text-gray-800 p-5 rounded-full shadow-2xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-125 border-2 border-white/50 hover:shadow-gym-primary/30"
+                        aria-label="Imagen anterior"
+                      >
+                        <ChevronLeft className="h-8 w-8" />
+                      </button>
+
+                      <button
+                        onClick={nextSlide}
+                        className="absolute right-8 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-md hover:bg-white text-gray-800 p-5 rounded-full shadow-2xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-125 border-2 border-white/50 hover:shadow-gym-primary/30"
+                        aria-label="Siguiente imagen"
+                      >
+                        <ChevronRight className="h-8 w-8" />
+                      </button>
+
+                      {/* Enhanced Dots Indicators - Adaptados para altura completa */}
+                      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex space-x-4 bg-black/50 backdrop-blur-md px-8 py-4 rounded-full border border-white/40 shadow-2xl">
+                        {carouselImages.map((_, index) => (
+                          <button
+                            key={index}
+                            onClick={() => goToSlide(index)}
+                            className={`w-5 h-5 rounded-full transition-all duration-300 ${index === currentSlide
+                                ? 'bg-gym-primary shadow-lg scale-150 shadow-gym-primary/60 border-2 border-white ring-2 ring-white/50'
+                                : 'bg-white/70 hover:bg-white/90 hover:scale-125 border border-white/30'
+                              }`}
+                            aria-label={`Ir a imagen ${index + 1}`}
+                          />
+                        ))}
+                      </div>
                     </div>
                   </div>
 
@@ -482,7 +482,7 @@ export default function GymLandingPage() {
                     <p className="text-5xl font-bold text-yellow-400 mb-2">$129.990</p>
                     <p className="text-gray-300 text-lg">¡El más elegido!</p>
                   </div>
-                  <Button 
+                  <Button
                     onClick={() => {
                       const phoneNumber = "56959889632"
                       const message = "¡Hola! Quiero transformar mi vida y alcanzar mis objetivos fitness con el Plan Personalizado. ¿Podrían ayudarme a comenzar mi camino hacia una mejor versión de mí mismo?"
@@ -531,7 +531,7 @@ export default function GymLandingPage() {
                     <p className="text-4xl font-bold text-gym-primary mb-1">$54.990</p>
                     <p className="text-gym-primary font-semibold text-xl">Estudiante: $39.990</p>
                   </div>
-                  <Button 
+                  <Button
                     onClick={() => {
                       const phoneNumber = "56959889632"
                       const message = "¡Hola! Quiero comenzar mi camino fitness y mejorar mi salud con el Plan Esencial. ¿Podrían brindarme más información para empezar?"
@@ -587,7 +587,7 @@ export default function GymLandingPage() {
                     <p className="text-4xl font-bold text-purple-300">$149.990</p>
                     <p className="text-gray-300 text-lg">Experiencia premium</p>
                   </div>
-                  <Button 
+                  <Button
                     onClick={() => {
                       const phoneNumber = "56959889632"
                       const message = "¡Hola! Estoy interesado/a en la experiencia premium completa con el Plan Integral, incluyendo el seguimiento nutricional. ¿Podrían ayudarme a comenzar esta transformación integral?"
@@ -649,7 +649,7 @@ export default function GymLandingPage() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
             {/* WhatsApp Card */}
-            <Card 
+            <Card
               className="relative overflow-hidden bg-gradient-to-br from-green-400 via-green-500 to-green-600 border-2 border-green-300 text-center shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group"
               onClick={handleWhatsAppClick}
             >
@@ -667,7 +667,7 @@ export default function GymLandingPage() {
             </Card>
 
             {/* Instagram Card */}
-            <Card 
+            <Card
               className="relative overflow-hidden bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 border-2 border-pink-300 text-center shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group"
               onClick={handleInstagramClick}
             >
@@ -685,7 +685,7 @@ export default function GymLandingPage() {
             </Card>
 
             {/* Map Card */}
-            <Card 
+            <Card
               className="relative overflow-hidden bg-gradient-to-br from-gym-primary via-blue-400 to-blue-600 border-2 border-gym-primary/50 text-center shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group"
               onClick={handleMapClick}
             >
@@ -704,11 +704,11 @@ export default function GymLandingPage() {
           </div>          {/* Google Maps Embed */}
           <div className="w-full px-2 sm:px-4 lg:px-6 xl:px-8 2xl:px-12">
             <div className="relative rounded-xl overflow-hidden shadow-2xl">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1728.3366543638322!2d-71.3440601!3d-29.9600742!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9691c8fb878c1a35%3A0x178cdb2945622f61!2sOssand%C3%B3n%2019%2C%201781295%20Coquimbo!5e0!3m2!1ses-419!2scl!4v1756492361103!5m2!1ses-419!2scl" 
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1728.3366543638322!2d-71.3440601!3d-29.9600742!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9691c8fb878c1a35%3A0x178cdb2945622f61!2sOssand%C3%B3n%2019%2C%201781295%20Coquimbo!5e0!3m2!1ses-419!2scl!4v1756492361103!5m2!1ses-419!2scl"
                 className="w-full h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] 2xl:h-[800px] border-0"
                 allowFullScreen={true}
-                loading="lazy" 
+                loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Ubicación GymTyme - Ossandón 19, Coquimbo"
               />
