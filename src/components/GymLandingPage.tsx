@@ -93,7 +93,7 @@ export default function GymLandingPage() {
       {/* Floating Menu Button - Top Right */}
       {/* //CAMBIAME */}
       <Button
-        onClick={() => window.open('https://tyme-frontend.vercel.app/', '_blank')}
+        onClick={() => window.open('https://app.somostyme.cl/', '_blank')}
         className="fixed top-6 right-6 z-50 bg-white/90 backdrop-blur-sm border border-gray-200 hover:bg-gym-primary hover:border-gym-primary hover:scale-110 shadow-lg transition-all duration-300 cursor-pointer"
         size="icon"
       >
@@ -295,8 +295,8 @@ export default function GymLandingPage() {
                             key={index}
                             onClick={() => goToSlide(index)}
                             className={`w-5 h-5 rounded-full transition-all duration-300 ${index === currentSlide
-                                ? 'bg-gym-primary shadow-lg scale-150 shadow-gym-primary/60 border-2 border-white ring-2 ring-white/50'
-                                : 'bg-white/70 hover:bg-white/90 hover:scale-125 border border-white/30'
+                              ? 'bg-gym-primary shadow-lg scale-150 shadow-gym-primary/60 border-2 border-white ring-2 ring-white/50'
+                              : 'bg-white/70 hover:bg-white/90 hover:scale-125 border border-white/30'
                               }`}
                             aria-label={`Ir a imagen ${index + 1}`}
                           />
